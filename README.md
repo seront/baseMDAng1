@@ -192,7 +192,7 @@ Usaremos JSDOM
 * Menos ruido en src folder
 * Deployment confusion
 
-#### Alongside
+#### Alongside
 * Easy import 
 * Clear visibility
 * Convenient to open
@@ -200,14 +200,14 @@ Usaremos JSDOM
 
 fileName.test.js
 
-### When to run tests
+#### When to run tests
 Cuando guardo! 
 * Rapid feedback
 * Facilitates TDD
 * Automatic = Low friction
 * Increases test visibility
 
-### Continuous Integration
+## Continuous Integration
 * Construye tu aplicación automáticamente cuando se hace un commit
 * Corre tus tests
 * Check code coverage

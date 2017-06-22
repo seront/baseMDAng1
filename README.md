@@ -133,10 +133,10 @@ bit.ly/jsdeveslint
   }
 }
 ```
-#### ¿Cuales reglas debo usar?
+#### ¿Cuales reglas debo usar?
 http://eslint.org/docs/rules/  Es necesario una reunión con el equipo para decidir
 
-#### Que reglas son errores o advertencias 
+#### Que reglas son errores o advertencias 
 Advertencias (warinings)
 * Puedes seguir desarrollando
 * Pueden ser ignoradas

@@ -20,8 +20,8 @@ Instalar plugin en visualstudio
 >nsp check
 
 ## Localtunnel setup
-npm install localtunnel -g
-node buildScripts/srcServer.js
+>npm install localtunnel -g
+>node buildScripts/srcServer.js
 >lt --port 3000
 >lt --port 3000 --subdomain patricio
 

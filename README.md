@@ -187,8 +187,8 @@ Usaremos Chai
     * JSDOM 
 Usaremos JSDOM
 
-### Where to place tests
-#### Centralizado 
+### Where to place tests
+#### Centralizado 
 * Menos ruido en src folder
 * Deployment confusion
 

@@ -146,12 +146,12 @@ Errores
 * No pueden ser ignoradas
 * El equipo se ve obligado a cumplirlas
 
-### ¿Qué plugins debo usar? 
+#### ¿Qué plugins debo usar? 
 Básicamente depende de la tecnología, en nuestro caso usaremos 
 * eslint-plugin-node
 * eslint-plugin-angular
 
-### Preset hechos?
+#### Preset hechos?
 * https://github.com/sindresorhus/eslint-config-xo
 * https://github.com/standard/eslint-config-standard
 

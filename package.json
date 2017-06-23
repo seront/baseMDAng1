@@ -4,7 +4,7 @@
   "description": "JavaScript development environment",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mockapi",
     "open:src": "babel-node buildScripts/srcServer.js",
     "security-check": "nsp check",
     "lint": "esw webpack.config.* src buildScripts ",
@@ -12,12 +12,18 @@
     "share": "npm-run-all --parallel localtunnel open:src ",
     "localtunnel": "lt --port 3000",
     "test": "mocha --reporter progress buildScripts/testSepup.js \"src/**/*.test.js\"",
-    "test:watch" : "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "generate-mock-data": "babel-node buildScripts/generateMockData",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001",
+    "clean-dist": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm-run-all clean-dist test lint",
+    "build": "babel-node buildScripts/build.js",
+    "postbuild": "babel-node buildScripts/distServer.js"
   },
   "author": "Patricio Soto",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "eslint-plugin-import": "^2.5.0",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
@@ -50,6 +56,8 @@
     "webpack": "^3.0.0",
     "webpack-dev-middleware": "^1.11.0",
     "webpack-hot-middleware": "^2.18.0",
+    "eslint-plugin-import": "^2.5.0",
+    "html-webpack-plugin": "^2.28.0",
     "webpack-md5-hash": "0.0.5"
   }
 }

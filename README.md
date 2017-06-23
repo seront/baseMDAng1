@@ -73,7 +73,7 @@ import jquery from "jquery";
 ```
 
 ### Webpack para hacer bundle
-¿Porqué? 
+¿Por qué? 
 * Maneja más que solo JS
     * JS
     * Imagenes
@@ -94,7 +94,7 @@ devtool: 'inline-source-map'
 
 ## Linting 
 ### ESLint
-¿Porqué? 
+¿Por qué? 
 * Consistencia
   * Feedback rápido 
   * Eliminar confirm/alert
@@ -216,13 +216,51 @@ Cuando guardo!
 Servidores? 
 * Travis
 * Appveyor
-* Jenkins
+* Jenkins (Usaremos Jenkins)
 
 
+## HTTP Calls
+
+Node :
+* http
+* request
+
+Browser : 
+* XMLHttpRequest
+* jQuery
+* Fetch
+
+Node & Browser :
+* isomorphic-fetch
+* xhr
+* SuperAgent
+* Axios
+
+Usaremos Axios :) 
 
 
+### Centralizar las llamadas a la API
+¿Por qué?
+* Configuramos todas las llamadas en un solo lugar (métodos de autenticación, etc)
+* Manejo de lógica de preloading (básicamente para monitorear) 
+* Manejo de errores
+* Podemos centralizar el manejo de los mocks! :) 
 
 
+## Mock HTTP 
+¿Por qué? 
+* Unit testing
+* Respuestas inmediatas
+* Funciona aún cuando los servicios estén abajo
+* Prototipeo rápido
+* Evitar cueyos de botella
+* Permite trabajar sin internet
 
 
+### Mock API 
+Usaremos 
+* JSON Schema Faker http://json-schema-faker.js.org/#gist/eb11f16c9edccf040c028dc8bd2b1756
+* JSON Server 
+* faker.js, chance.js , randexp.js 
 
+bit.ly/ps-mock-data-schema

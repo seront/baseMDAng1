@@ -93,7 +93,7 @@ devtool: 'inline-source-map'
 ...
 ```
 
-## Linting 
+## Linting 
 ### ESLint
 ¿Por qué? 
 * Consistencia
@@ -220,7 +220,7 @@ Servidores?
 * Jenkins (Usaremos Jenkins)
 
 
-## HTTP Calls
+## HTTP Calls
 
 Node :
 * http
@@ -240,7 +240,7 @@ Node & Browser :
 Usaremos Axios :) 
 
 
-### Centralizar las llamadas a la API
+### Centralizar las llamadas a la API
 ¿Por qué?
 * Configuramos todas las llamadas en un solo lugar (métodos de autenticación, etc)
 * Manejo de lógica de preloading (básicamente para monitorear) 
@@ -248,7 +248,7 @@ Usaremos Axios :)
 * Podemos centralizar el manejo de los mocks! :) 
 
 
-## Mock HTTP 
+## Mock HTTP 
 ¿Por qué? 
 * Unit testing
 * Respuestas inmediatas
@@ -258,7 +258,7 @@ Usaremos Axios :)
 * Permite trabajar sin internet
 
 
-### Mock API 
+### Mock API 
 Usaremos 
 * JSON Schema Faker http://json-schema-faker.js.org/#gist/eb11f16c9edccf040c028dc8bd2b1756
 * JSON Server 

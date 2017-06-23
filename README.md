@@ -68,6 +68,7 @@ define(['moduleX'],function(moduleX){
 var jquery = require("jquery");
 ```
 ##### Módulos ES6 (Hoy)
+http://2ality.com/2014/09/es6-modules-final.html
 ```javascript
 import jquery from "jquery";
 ```

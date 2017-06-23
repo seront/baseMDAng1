@@ -33,11 +33,11 @@ Leer más en bit.ly/npmvsgulp
 * npm start
 * npm run share
 
-## Transpiling 
-Articulo interesante: 
-* https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them
+## Transpiling 
 Usaremos Babel
+* https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them
 * .babelrc
+
 
 
 ## Bundle 

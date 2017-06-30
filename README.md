@@ -202,7 +202,7 @@ Usaremos JSDOM
 fileName.test.js
 
 #### When to run tests
-Cuando guardo! 
+Cuando guardo
 * Rapid feedback
 * Facilitates TDD
 * Automatic = Low friction

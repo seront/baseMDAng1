@@ -32,6 +32,7 @@
     "image-webpack-loader": "^3.3.1",
     "jquery": "^3.2.1",
     "json-loader": "^0.5.4",
+    "optimize-css-assets-webpack-plugin": "^2.0.0",
     "promise": "^8.0.0",
     "url-loader": "^0.5.9",
     "webpack-isomorphic-tools": "^3.0.3",

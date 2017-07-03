@@ -7,5 +7,12 @@ export default function routes($stateProvider) {
       template: require('./dashboard.html'),
       controller: 'DashboardController',
       controllerAs: 'ctrl'
-    });
+    })
+    .state('componente', {
+      url: '/componente',
+      component: 'componente',
+      // controller: 'DashboardController',
+      // controllerAs: 'ctrl'
+    })
+    ;
 }

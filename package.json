@@ -1,7 +1,8 @@
 {
-  "name": "js-dev-env",
+  "name": "medipass-base",
   "version": "1.0.0",
-  "description": "JavaScript development environment",
+  "description": "Componentes minimos necesarios para los multiples proyectos frontend de Medipass",
+  "main": "lib/medipass-semilla",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mockapi",
@@ -22,9 +23,11 @@
     "build": "babel-node buildScripts/build.js",
     "postbuild": "babel-node buildScripts/distServer.js"
   },
-  "author": "Patricio Soto",
+  "author": "Néstor Mendoza",
   "license": "BSD-2-Clause",
   "dependencies": {
+    "angular": "^1.6.4",
+    "angular-ui-router": "^1.0.3",
     "axios": "^0.16.2",
     "bootstrap": "^3.3.7",
     "bootswatch": "^3.3.7",

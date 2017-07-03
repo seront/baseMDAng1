@@ -15,11 +15,13 @@ export default {
   },
   target: 'web',
   output: {
-    path: path.resolve(__dirname, '/lib'),
-    library: libraryName,
-    libraryTarget: 'umd',
-    umdNamedDefine: true,
-    filename: 'medipass-semilla.js'
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    filename: '[name].[chunkhash].js'
+    // library: libraryName,
+    // libraryTarget: 'umd',
+    // umdNamedDefine: true,
+    // filename: 'medipass-semilla.js'
   },
   plugins: [
     //Para manejar el css

@@ -1,17 +1,19 @@
 
-import 'jquery';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.js';
-require('bootswatch/cerulean/bootstrap.css');
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootswatch/cerulean/bootstrap.min.css';
+
 import angular from 'angular';
 import axios from 'axios';
 import uirouter from 'angular-ui-router';
+
 import NavbarController from './navbar/navbar.controller';
 import usuarios from './usuarios';
 import dashboard from './dashboard';
+
 import routing from './app.config';
 
 
+console.log("asdfasdf")
 let app = angular.module('app',[uirouter,usuarios,dashboard])
   .config(routing);
 app.controller('NavbarController',NavbarController);

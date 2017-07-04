@@ -31,7 +31,7 @@ export default {
     library: 'medipass-base',
     libraryTarget: 'umd',
     umdNamedDefine: true,
-    filename: 'medipass-semilla.js'
+    filename: 'medipass-base.js'
   },
   plugins: [
     //Para manejar el css

@@ -11,7 +11,8 @@ import OptimizeCssAssetsPlugin  from 'optimize-css-assets-webpack-plugin';
 export default {
   devtool: 'source-map',
   entry: {
-    main : path.resolve(__dirname, 'src/index'),
+    // main : path.resolve(__dirname, 'src/index'),
+    main : path.resolve(__dirname, 'src/access'),
     // vendor : VENDOR_LIBS
   },
   externals:{

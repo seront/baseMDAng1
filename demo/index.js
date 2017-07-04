@@ -1,22 +1,18 @@
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootswatch/cerulean/bootstrap.min.css';
 
 import angular from 'angular';
 import axios from 'axios';
 import uirouter from 'angular-ui-router';
 
-import NavbarController from './navbar/navbar.controller';
-import usuarios from './usuarios';
-import dashboard from './dashboard';
-
+import NavbarController from '../src/navbar/navbar.controller';
+import access from '../src/access';
+// import components from '../src/components';
 import routing from './app.config';
 
 
-console.log("asdfasdf")
-let app = angular.module('app',[uirouter,usuarios,dashboard])
+// let app = angular.module('app',[uirouter, access, components])
+let app = angular.module('app',[uirouter, access])
   .config(routing);
-app.controller('NavbarController',NavbarController);
 
 app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/dashboard");

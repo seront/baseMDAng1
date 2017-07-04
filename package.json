@@ -2,7 +2,7 @@
   "name": "medipass-base",
   "version": "1.0.0",
   "description": "Componentes minimos necesarios para los multiples proyectos frontend de Medipass",
-  "main": "lib/medipass-semilla",
+  "main": "lib/medipass-base",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mockapi",
@@ -18,10 +18,13 @@
     "generate-mock-data": "babel-node buildScripts/generateMockData",
     "prestart-mockapi": "npm run generate-mock-data",
     "start-mockapi": "json-server --watch src/api/db.json --port 3001",
-    "clean-dist": "rimraf ./dist && mkdir dist",
-    "prebuild": "npm-run-all clean-dist test lint",
+    "clean-dist": "rimraf dist && mkdir dist",
+    "prebuild": "npm run clean-dist",
     "build": "babel-node buildScripts/build.js",
-    "postbuild": "babel-node buildScripts/distServer.js"
+    "postbuild": "babel-node buildScripts/distServer.js",
+    "clean-lib": "rimraf lib && mkdir lib",
+    "prebuild-lib": "npm run clean-lib",
+    "build-lib": "babel-node buildScripts/build-lib.js"
   },
   "author": "Néstor Mendoza",
   "license": "BSD-2-Clause",

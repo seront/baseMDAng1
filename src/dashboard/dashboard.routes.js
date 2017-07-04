@@ -8,11 +8,5 @@ export default function routes($stateProvider) {
       controller: 'DashboardController',
       controllerAs: 'ctrl'
     })
-    .state('componente', {
-      url: '/componente',
-      component: 'componente',
-      // controller: 'DashboardController',
-      // controllerAs: 'ctrl'
-    })
     ;
 }

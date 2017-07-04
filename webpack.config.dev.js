@@ -11,7 +11,8 @@ const VENDOR_LIBS = [
 export default {
   devtool: 'inline-source-map',
   entry: {
-    main : path.resolve(__dirname, 'src/index'),
+    // main : path.resolve(__dirname, 'src/index'),
+    main : path.resolve(__dirname, 'demo/index'),
     vendor : VENDOR_LIBS
   },
   target: 'web',
@@ -36,7 +37,8 @@ export default {
     }),
     // Create HTML file that includes reference to bundled JS.
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      // template: 'src/index.html',
+      template: 'demo/index.html',
       // minify: {
       //   removeComments: true,
       //   collapseWhitespace: true,

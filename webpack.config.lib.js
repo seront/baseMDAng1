@@ -29,9 +29,9 @@ export default {
     path: path.resolve(__dirname, 'lib'),
     publicPath: '/',
     // filename: 'medipass-base.js'
-    library: 'medipass-base',
-    libraryTarget: 'umd',
-    umdNamedDefine: true,
+    // library: 'medipass-base',
+    // libraryTarget: 'umd',
+    // umdNamedDefine: true,
     filename: 'medipass-base.js'
   },
   plugins: [

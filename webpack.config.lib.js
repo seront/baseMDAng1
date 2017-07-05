@@ -27,10 +27,10 @@ export default {
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'lib'),
-    publicPath: '/',
+    // publicPath: '/',
     // filename: 'medipass-base.js'
-    // library: 'medipass-base',
-    // libraryTarget: 'umd',
+    library: 'medipass-base',
+    libraryTarget: 'umd',
     // umdNamedDefine: true,
     filename: 'medipass-base.js'
   },
@@ -79,12 +79,14 @@ export default {
     // ya no es necesario https://webpack.js.org/guides/migrating/#dedupeplugin-has-been-removed
     // new webpack.optimize.DedupePlugin(),
     // Minify JS
-    new webpack.optimize.UglifyJsPlugin(
-      {
-        compress: {
-          unused: false
-        }
-      })
+
+    // new webpack.optimize.UglifyJsPlugin(
+    //   {
+    //     compress: {
+    //       unused: false
+    //     }
+    //   })
+
   ],
   module: {
     rules: [

@@ -7,15 +7,16 @@ import {AccessMain} from './accessMain.js';
 import {AccessLogin} from './accessLogin.js';
 import {AccessRecuperar} from './accessRecuperar.js';
 
-// export default angular.module('app.access', [uirouter])
-//   .component('accessMain', AccessMain)
-//   .component('accessLogin', AccessLogin)
-//   .component('accessRecuperar', AccessRecuperar)
-//   .config(routing).name;
-let AccessModule = angular.module('app.access', [uirouter])
+export default angular.module('app.access', [uirouter])
   .component('accessMain', AccessMain)
   .component('accessLogin', AccessLogin)
   .component('accessRecuperar', AccessRecuperar)
   .config(routing).name;
 
-export {AccessModule};
+// let AccessModule = angular.module('app.access', [uirouter])
+//   .component('accessMain', AccessMain)
+//   .component('accessLogin', AccessLogin)
+//   .component('accessRecuperar', AccessRecuperar)
+//   .config(routing).name;
+
+// export {AccessModule};

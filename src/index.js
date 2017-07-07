@@ -1,3 +1,13 @@
-import '../medipass.css';
+import './medipass.css';
 
-export import Access from './access'
+// aun no logro hacer que esto funcione, estudiando posibilidades
+// import angular from 'angular';
+// import {default as AccessModule} from "./access";
+// import {default as ComponentsModule} from "./components";
+// export angular.module('MedipassBase',[AccessModule, ComponentsModule]).name;
+// export AccessModule;
+// export ComponentsModule;
+
+//Asi funciona para exportar multiples modulos por separado
+export {default as AccessModule} from "./access";
+export {default as ComponentsModule} from "./components";

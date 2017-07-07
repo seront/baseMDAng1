@@ -1,6 +1,6 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
-import '../medipass.css';
+
 import routing from './access.routes';
 
 import {AccessMain} from './accessMain.js';

@@ -13,10 +13,3 @@ export default angular.module('app.access', [uirouter])
   .component('accessRecuperar', AccessRecuperar)
   .config(routing).name;
 
-// let AccessModule = angular.module('app.access', [uirouter])
-//   .component('accessMain', AccessMain)
-//   .component('accessLogin', AccessLogin)
-//   .component('accessRecuperar', AccessRecuperar)
-//   .config(routing).name;
-
-// export {AccessModule};

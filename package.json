@@ -5,7 +5,7 @@
   "main": "lib/medipass-base",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mockapi",
+    "start": "npm-run-all --parallel security-check open:src lint:watch start-mockapi",
     "open:src": "babel-node buildScripts/srcServer.js",
     "open:src:nodemon": "nodemon buildScripts/srcServer.js --exec babel-node",
     "security-check": "nsp check",

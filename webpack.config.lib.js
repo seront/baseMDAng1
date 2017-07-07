@@ -15,6 +15,8 @@ export default {
     main: path.resolve(__dirname, 'src/access'),
     // vendor : VENDOR_LIBS
   },
+  //bibliotecas externas que requiere este paquete para funcionar pero
+  //que no se incluyen en el
   externals: {
     "angular": "angular",
     "angular-ui-router": "angular-ui-router",
@@ -22,7 +24,6 @@ export default {
     "promise": "promise",
     "bootstrap": "bootstrap",
     "jquery": "jquery",
-    "bootswatch/cerulean/bootstrap.min.css": "bootswatch/cerulean/bootstrap.min.css"
   },
   target: 'web',
   output: {
@@ -38,12 +39,13 @@ export default {
     //Para manejar el css
     // new ExtractTextPlugin('style.css'),
     new ExtractTextPlugin('medipass-base.css'),
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.css$/g,
-      cssProcessor: require('cssnano'),
-      cssProcessorOptions: { discardComments: { removeAll: true } },
-      canPrint: true
-    }),
+
+    // new OptimizeCssAssetsPlugin({
+    //   assetNameRegExp: /\.css$/g,
+    //   cssProcessor: require('cssnano'),
+    //   cssProcessorOptions: { discardComments: { removeAll: true } },
+    //   canPrint: true
+    // }),
     //Divide el build en chunks
     new webpack.optimize.CommonsChunkPlugin({
       // names: ['main', 'vendor']
@@ -80,12 +82,12 @@ export default {
     // new webpack.optimize.DedupePlugin(),
     // Minify JS
 
-    // new webpack.optimize.UglifyJsPlugin(
-    //   {
-    //     compress: {
-    //       unused: false
-    //     }
-    //   })
+    new webpack.optimize.UglifyJsPlugin(
+      {
+        compress: {
+          unused: false
+        }
+      })
 
   ],
   module: {
@@ -108,7 +110,7 @@ export default {
       // { test: /\.json$/, loader: 'json-loader'},
       { test: /\.scss/, exclude: /node_modules/, loader: 'style-loader!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap&includePaths[]=node_modules/compass-mixins/lib' },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
-      // { test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader?sourceMap') },
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader?sourceMap') },
       // //{ test: webpackIsomorphicToolsPlugin.regular_expression('images'), loader: 'url-loader?limit=10240'}, // si hay un error mirar
       // {
       //   //Esto permite incluir imagenes como recursos empaquetados

@@ -1,12 +1,12 @@
-import 'bootswatch/cerulean/bootstrap.min.css';
+// import '../src/bootstrap/Supernice.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../src/medipass.css';
 
 import angular from 'angular';
 import axios from 'axios';
 import uirouter from 'angular-ui-router';
 
-import NavbarController from '../src/navbar/navbar.controller';
 import access from '../src/access';
-// import components from '../src/components';
 import routing from './app.config';
 
 

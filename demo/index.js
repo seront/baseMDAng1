@@ -6,10 +6,9 @@ import angular from 'angular';
 import axios from 'axios';
 import uirouter from 'angular-ui-router';
 
-import {AccessModule} from '../src';
-import {ComponentsModule} from '../src';
-// import access from '../src/access';
-// import components from '../src/components';
+import {AccessModule} from '../src/medipass.module.js';
+// import {ComponentsModule} from '../src';
+
 import routing from './app.config';
 
 

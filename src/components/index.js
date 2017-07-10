@@ -1,10 +1,7 @@
 import angular from 'angular';
 
-import {SideMenu} from './sideMenu.js';
-import {MainHeader} from './mainHeader.';
+import {Access} from './access/access.module.js';
 
-export default angular.module('app.components', [])
-  .component('sideMenu', SideMenu)
-  .component('mainHeader', MainHeader)
+export default angular.module('medipass.components', [Access])
   .name;
 

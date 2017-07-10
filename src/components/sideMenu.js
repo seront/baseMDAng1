@@ -1,4 +1,4 @@
-class sideMenuController{
+class SideMenuController{
   constructor(){
      console.log("sideMenuController componente");
   }
@@ -6,8 +6,7 @@ class sideMenuController{
 
 export const SideMenu = {
   template: require('./sideMenu.html'),
-  controller: sideMenuController,
+  controller: SideMenuController,
   bindings: {
   }
 };
-// https://bootsnipp.com/snippets/featured/admin-side-menu

@@ -3,6 +3,10 @@ este repositorio es un fork de
 https://github.com/psotoulloa/js-dev-env
 revise primero antes de comenzar con este repositorio en forma de desarrollo
 
+## Guia de estilo
+
+Sigamos los parametros sugeridos aqui https://github.com/toddmotto/angularjs-styleguide
+
 ##Instalar como libreria
 Este repositorio contiene una serie de modulos donde se encuentran tanto componentes separados (headers, footers, sidebar) 
 como modulos genericos integrados como el "Access", donde se encuentran las vistas integradas de Login, Recuperar contraseña entre otras ya maquetadas.

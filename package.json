@@ -1,8 +1,8 @@
 {
-  "name": "medipass-base",
+  "name": "seront-material-1",
   "version": "1.0.0",
-  "description": "Componentes minimos necesarios para los multiples proyectos frontend de Medipass",
-  "main": "lib/medipass-base",
+  "description": "Componentes minimos para comenzar con una aplicacion AngularJS con angular material",
+  "main": "lib/seront-material-1",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel security-check open:src lint:watch start-mockapi",
@@ -30,10 +30,13 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "angular": "^1.6.4",
+    "angular-animate": "^1.6.5",
+    "angular-aria": "^1.6.5",
+    "angular-material": "^1.1.4",
+    "angular-translate": "^2.15.2",
     "angular-ui-router": "^1.0.3",
     "axios": "^0.16.2",
     "bootstrap": "^3.3.7",
-    "bootswatch": "^3.3.7",
     "file-loader": "^0.11.2",
     "image-webpack-loader": "^3.3.1",
     "jquery": "^3.2.1",

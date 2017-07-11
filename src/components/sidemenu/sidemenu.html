@@ -14,20 +14,12 @@
   </md-toolbar>
   <md-content layout-padding>
     <md-list>
-      <md-list-item layout="row">
-        <md-icon>folder</md-icon>
-        <span flex>
-          Carpetas
+      <md-list-item layout="row" ng-repeat-start="item in $ctrl.menu" ui-sref="{{item.state}}">
+        <md-icon>{{item.icon}}</md-icon>
+        <span flex translate="{{item.name}}">
         </span>
       </md-list-item>
-      <md-divider></md-divider>
-      <md-list-item layout="row">
-        <md-icon>people</md-icon>
-        <span flex>
-          Usuarios
-        </span>
-      </md-list-item>
-      <md-divider></md-divider>
+      <md-divider ng-repeat-end ng-hide="$last"></md-divider>
     </md-list>
   </md-content>
 </md-sidenav>

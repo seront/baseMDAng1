@@ -17,7 +17,8 @@ export default {
     "axios": "axios",
     "promise": "promise",
     "bootstrap": "bootstrap",
-    "jquery": "jquery"
+    "jquery": "jquery",
+    "angular-translate": "angular-translate"
   },
   target: 'web',
   output: {

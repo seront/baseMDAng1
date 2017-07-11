@@ -1,22 +1,24 @@
-// import '../src/bootstrap/Supernice.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../src/medipass.css';
-
+import '../node_modules/angular-material/angular-material.css'
 import angular from 'angular';
+import ngMaterial from 'angular-material';
 import axios from 'axios';
 import uirouter from 'angular-ui-router';
 
-import {AccessModule} from '../src/medipass.module.js';
-// import {ComponentsModule} from '../src';
+import { default as MedipassBase } from '../src/medipass.module.js';
+import { Main } from './components/main/main.component';
 
 import routing from './app.config';
 
-
-// let app = angular.module('app',[uirouter, access, components])
-let app = angular.module('app',[uirouter, AccessModule, ComponentsModule])
+let app = angular.module('app', [
+  uirouter,
+  ngMaterial,
+  MedipassBase
+])
+.component('main', Main)
   .config(routing);
 
-app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/dashboard");
   axios.defaults.baseURL = 'http://localhost:3001';
 }]);

@@ -8,20 +8,20 @@
         <label>
           Usuario
         </label>
-        <input type="email">
+        <input type="email" ng-model="$ctrl.username">
       </md-input-container>
       <md-input-container>
         <label>
           Contraseña
         </label>
-        <input type="password">
+        <input type="password"  ng-model="$ctrl.pwd">
       </md-input-container>
     </md-card-content>
     <md-car-actions layout="column">
-      <md-button class="md-primary md-raised">
+      <md-button class="md-primary md-raised" ng-click="$ctrl.login()">
         Iniciar sesion
       </md-button>
-      <md-button class="">
+      <md-button class="" ui-sref="access.recuperar">
         Recuperar contraseña
       </md-button>
     </md-car-actions>

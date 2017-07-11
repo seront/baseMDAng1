@@ -12,7 +12,14 @@ export default function routing($stateProvider) {
     .state('app.dashboard', {
       // abstract: true,
       url: 'dashboard',
-      component: 'sideMenu'
+      component: 'main'
+      // template: 'hola side menu'
+    })
+    .state('app.dashboard.usuarios', {
+      // abstract: true,
+      url: '/usuarios',
+      // component: 'main'
+      template: 'USUARIOS AQUI'
     })
     ;
 }

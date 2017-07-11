@@ -1,12 +1,16 @@
 class SideMenuController{
   constructor(){
-     console.log("sideMenuController componente");
+    //  console.log("sideMenuController componente");
   }
+  $onInit() {
+
+    }
 }
 
-export const SideMenu = {
+export const SidemenuComponent = {
   template: require('./sideMenu.html'),
   controller: SideMenuController,
   bindings: {
+    menu: '<'
   }
 };

@@ -1,0 +1,23 @@
+<md-content layout="row" layout-align="center center">
+  <md-card>
+    <md-card-title>
+      Recuperar contraseña
+    </md-card-title>
+    <md-card-content layout="column" layout-align="center center">
+      <md-input-container>
+        <label>
+          Nombre de usuario
+        </label>
+        <input type="email">
+      </md-input-container>
+    </md-card-content>
+    <md-car-actions layout="column">
+      <md-button class="md-primary md-raised" ng-click="$ctrl.resetPwd()">
+        Recuperar contraseña
+      </md-button>
+      <md-button class="" ui-sref="access.login">
+        iniciar sesión
+      </md-button>
+    </md-car-actions>
+  </md-card>
+</md-content>

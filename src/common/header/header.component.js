@@ -1,10 +1,10 @@
 class HeaderController {
   constructor(){
 
-  };
+  }
 }
 
-export const MainHeader = {
+export const HeaderComponent = {
   template: require('./header.html'),
   controller: HeaderController,
   bindings: {

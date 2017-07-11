@@ -1,8 +1,9 @@
 import angular from 'angular';
 import material from 'angular-material'
 
-import {Header} from './header/header.module.js';
+import {default as HeaderModule} from './header/header.module';
 
-export default angular.module('medipass.common', [material])
-  .component('header', Header)
-  .config(routing).name;
+export default angular.module('medipass.common', [material,
+HeaderModule
+])
+.name;

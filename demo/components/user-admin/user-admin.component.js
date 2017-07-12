@@ -1,11 +1,13 @@
 class UserAdminController {
   constructor($log) {
-    this.$log = $log;
+    // this.$log = $log;
+    this.action1Value = false;
+    this.log = $log.log;
     this.headers = [
-      {name: "header1", numeric: false},
-      {name: "header2", numeric: false},
-      {name: "header3", numeric: false},
-      {name: "header4", numeric: false}
+      { name: "header1", numeric: false },
+      { name: "header2", numeric: false },
+      { name: "header3", numeric: false },
+      { name: "header4", numeric: false }
     ];
     this.config = {
       key1: { type: "text" },
@@ -17,44 +19,64 @@ class UserAdminController {
       key3: { type: "number" },
       key4: { type: "text" }
     };
-    this.actions = {
-      action1: {
-        action: function () {
-          this.$log.log("action1");
-        },
-        name: "action1",
-        tooltip: "ACTION1",
-        type: "switch"
+
+    let action1 = {
+      action: this.action1,
+      style: ["md-raised", "md-primary"],
+      text: "action1",
+      icon: {
+        name: "people",
+        style: []
       },
-      action2: {
-        action: function () {
-          this.$log.log("action1");
-        },
-        // condition:
-        name: "action2",
-        tooltip: "ACTION2",
-        type: "switch"
-      }
-    }
-      ;
+      tooltip: {
+        text: "ACTION1",
+        direction: "up",
+        style: []
+      },
+      type: "button",
+      value: 'switch'
+    };
+    let action2 = {
+      action: this.action2,
+      // condition:
+      name: "action2",
+      tooltip: "ACTION2",
+      type: "switch"
+    };
+    this.actions = [action1, action2];
+
     // this.objects = [];
     var object1 = {
       key1: "value1",
       key2: "value2",
       key3: "value3",
-      key4: "value4"
+      key4: "value4",
+      switch: true
     };
     var object2 = {
-       key1: "value1",
+      key1: "value1",
       key2: "value2",
       key3: "value3",
-      key4: "value4"
+      key4: "value4",
+      switch: false
     };
     this.objects = [object1, object2];
   }
+  action1(value) {
+    console.log(value);
+    console.log(this.action1Value);
+    this.action1Value = !this.action1Value;
+    // this.log("action1 ");
+    // this.log(value);
+  }
+  action2(value) {
+    this.log("action2 ");
+    this.log(value);
+  }
 
   $onInit() {
-    this.$log.log("user admin componente");
+    this.log("user admin componente");
+    // this.action1Value = false;
   }
 }
 

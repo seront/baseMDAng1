@@ -4,11 +4,13 @@ class TableController {
     this.$log = $log;
   }
   $onInit() {
+
+    this.newConfig = [];
     this.$log.log("Table componente headers");
     this.$log.log(this.headers);
-    this.newConfig = [];
     this.order();
     this.$log.log(this.objects);
+    this.$log.log(this.actions);
   }
 
   $onChange(changes) {
@@ -50,6 +52,7 @@ export const TableComponent = {
   bindings: {
     config: '<',
     headers: '<',
-    objects: '<'
+    objects: '<',
+    actions: '='
   }
 };

@@ -18,7 +18,8 @@ export default {
     "promise": "promise",
     "bootstrap": "bootstrap",
     "jquery": "jquery",
-    "angular-translate": "angular-translate"
+    "angular-translate": "angular-translate",
+    "angular-material-data-table": "angular-material-data-table"
   },
   target: 'web',
   output: {

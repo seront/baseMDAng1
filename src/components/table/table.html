@@ -1,0 +1,104 @@
+Table component
+<md-table-pagination ng-if="($ctrl.pagination.available === true)" ng-class="$ctrl.pagination.style" md-limit="$ctrl.pagination.limit"
+  md-page="$ctrl.pagination.page" md-total="{{$ctrl.pagination.total}}" md-page-select="$ctrl.pagination.pageSelect" md-boundary-links="$ctrl.pagination.boundaryLinks"
+  md-on-paginate="$ctrl.pagination.onPaginate" md-label="{{$ctrl.pagination.label}}">
+</md-table-pagination>
+<md-table-container>
+  <table md-table>
+    <thead md-head>
+      <tr md-row>
+        <th md-column ng-repeat="header in $ctrl.headers" md-numeric="header.numeric">
+          <!--style="border-left: 2px solid"-->
+          <span translate="{{header.name}}"></span>
+          <!--<span>{{header.numeric}}</span>-->
+        </th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row ng-repeat="object in $ctrl.objects track by $index" md-auto-select>
+        <td md-cell ng-repeat="conf in $ctrl.newConfig">
+          <!--{{conf[0]}} {{$ctrl.config.exclude[conf[0]]}}-->
+          <!-- {{conf[0]}} -->
+
+          <!-- <md-button ng-if="(conf[1].type === 'button')" ng-class="conf[1].style" ng-click="conf[1].action(object)" ng-disabled="conf[1].disabled"
+            translate="{{object[item.conf[0]]}}" aria-label="{{object[item.conf[0]]}}" style="color: white">
+            <md-icon ng-if="(conf[1].icon)" ng-class="conf[1].iconStyle" style="color:white">{{conf[1].icon}}</md-icon>
+            <md-tooltip ng-if="(conf[1].tooltip)" ng-class="conf[1].tooltip.style" md-direction="{{conf[1].tooltip.direction}}">
+              {{conf[1].tooltip.text | translate}}
+            </md-tooltip>
+            <span ng-if="conf[1].text">{{conf[1].text|translate}}</span>
+          </md-button> -->
+
+          <md-checkbox ng-if="(conf[1].type === 'checkbox'&&conf[1].ic !== 'checkbox')" ng-model="object[conf[0]]" aria-label="{{conf[0]}}"
+            ng-change="$ctrl.change(object)" ng-class="conf[1].style" ng-disabled="conf[1].disabled" class="md-primary">
+          </md-checkbox>
+
+          <md-icon ng-if="(conf[1].type === 'checkbox'&&conf[1].ic !== undefined && object[conf[0]] === true)" style="color: #5A97D5">check</md-icon>
+          <md-icon ng-if="(conf[1].type === 'checkbox'&&conf[1].ic !== undefined && object[conf[0]] !== true)">cancel</md-icon>
+
+          <md-input-container ng-if="(conf[1].type === 'input')" ng-model="object[conf[0]]" aria-label="{{conf[0]}}" ng-class="conf[1].style">
+            <label></label>
+            <input ng-model="object[conf[0]]" ng-change="$ctrl.change(object)" ng-disabled="conf[1].disabled">
+          </md-input-container>
+
+          <md-input-container ng-if="(conf[1].type === 'inputNumber')" ng-model="object[conf[0]]" aria-label="{{conf[0]}}" ng-class="conf[1].style">
+            <label></label>
+            <input ng-model="object[conf[0]]" ng-change="$ctrl.change(object)" type="number" ng-disabled="conf[1].disabled">
+          </md-input-container>
+
+          <span ng-if="conf[1].type === 'text'" flex="{{conf[1].flex}}" ng-class="conf[1].style" ng-disabled="conf[1].disabled" translate="{{object[conf[0]]}}">
+          </span>
+
+          <span ng-if="conf[1].type === 'phone'" flex="{{conf[1].flex}}" ng-class="conf[1].style" ng-disabled="conf[1].disabled">
+          {{object[conf[0]]}}
+          </span>
+
+          <span ng-if="conf[1].type === 'number'" flex="{{conf[1].flex}}" ng-class="conf[1].style" ng-disabled="conf[1].disabled">
+          <span ng-if="conf[1].currency === '$'">{{conf[1].currency}} {{object[conf[0]] | currency:"":0}}</span>
+          </span>
+          <span ng-if="(conf[1].type === 'child')" flex="{{conf[1].flex}}" ng-class="conf[1].style" ng-disabled="conf[1].disabled">
+         {{object[conf[0]][conf[1].options.child]}}
+      </span>
+          <img ng-if="(conf[1].type === 'image')" ng-src="{{object[conf[0]]}}" ng-class="conf[1].style" alt="{{conf[1].alt}}" ng-click="conf[1].action(object)"
+          />
+          <span ng-if="(conf[1].type === 'date')" flex="{{conf[1].flex}}" ng-class="conf[1].style" ng-disabled="conf[1].disabled">
+         {{object[conf[0]]|date: conf[1].format}}
+      </span>
+          <md-switch ng-if="(conf[1].type === 'switch')" ng-model="object[conf[0]]" ng-change="conf[1].action(object)" aria-label="Switch 1"
+            ng-disabled="conf[1].disabled">
+          </md-switch>
+        </td>
+        <td md-cell ng-repeat="action in $ctrl.actions">
+
+          <md-switch ng-if="(action.type === 'switch')"
+           ng-change="action.action(object)"
+            aria-label="Switch 1"
+            ng-disabled="conf[1].disabled">
+          </md-switch>
+
+          <md-button ng-if="(action.type === 'button')"
+           ng-class="action.style"
+           ng-click="action.action(object)"
+           ng-disabled="conf[1].disabled"
+            translate="{{object[item.conf[0]]}}"
+             aria-label="{{object[item.conf[0]]}}"
+             style="color: white">
+            <md-icon ng-if="(conf[1].icon)" ng-class="conf[1].iconStyle" style="color:white">{{conf[1].icon}}</md-icon>
+            <md-tooltip ng-if="(conf[1].tooltip)"
+             ng-class="conf[1].tooltip.style"
+              md-direction="{{conf[1].tooltip.direction}}">
+              {{conf[1].tooltip.text | translate}}
+            </md-tooltip>
+            <span ng-if="conf[1].text">{{conf[1].text|translate}}</span>
+          </md-button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
+
+<md-table-pagination ng-if="($ctrl.pagination.available === true)" ng-class="$ctrl.pagination.style" md-limit="$ctrl.pagination.limit"
+  md-page="$ctrl.pagination.page" md-total="{{$ctrl.pagination.total}}" md-page-select="$ctrl.pagination.pageSelect" md-boundary-links="$ctrl.pagination.boundaryLinks"
+  md-on-paginate="$ctrl.pagination.onPaginate" md-label="{{$ctrl.pagination.label}}">
+</md-table-pagination>

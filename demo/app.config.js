@@ -18,8 +18,7 @@ export default function routing($stateProvider) {
     .state('app.dashboard.usuarios', {
       // abstract: true,
       url: '/usuarios',
-      // component: 'main'
-      template: 'USUARIOS AQUI'
+      component: 'userAdmin'
     })
     ;
 }

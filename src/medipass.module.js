@@ -14,6 +14,7 @@ export {default as CommonsModule} from './common/common.module';
 import {default as ComponentsModule} from "./components/components.module";
 import {default as CommonsModule} from './common/common.module';
 import {default as themeConfig} from './medipass-theme';
+import {default as CustomTableModule} from './components/table/table.module';
 import {translateConfig} from './medipass-translate';
 // import {SidemenuComponent} from './components/sidemenu/sidemenu.component'
 
@@ -22,6 +23,7 @@ export default angular.module('medipass.base', [
   ngMaterial,
   translate,
   ComponentsModule,
+  CustomTableModule,
   CommonsModule])
   .config(translateConfig)
   .config(themeConfig)

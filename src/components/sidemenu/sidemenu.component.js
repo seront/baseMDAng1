@@ -11,6 +11,7 @@ export const SidemenuComponent = {
   template: require('./sideMenu.html'),
   controller: SideMenuController,
   bindings: {
-    menu: '<'
+    menu: '<',
+    config:'<'
   }
 };

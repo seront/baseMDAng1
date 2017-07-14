@@ -60,17 +60,19 @@ Table component
           </md-switch>
         </td>
         <td md-cell ng-repeat="action in $ctrl.actions">
-
+           <!-- ng-change="action.action(object)" -->
           <md-switch ng-if="(action.type === 'switch')"
-           ng-change="action.action(object)"
+           ng-change="$ctrl.action(action.name, object)"
             aria-label="Switch 1"
             ng-model="object[action.value]"
             >
           </md-switch>
           <!-- ng-disabled="conf[1].disabled" -->
+
+          <!-- ng-click="action.action(object)" -->
           <md-button ng-if="(action.type === 'button')"
            ng-class="action.style"
-           ng-click="action.action(object)"
+           ng-click="$ctrl.action(action.text, object)"
              aria-label="{{action.name}}">
             <md-icon ng-if="action.icon"
             ng-class="action.icon.style">

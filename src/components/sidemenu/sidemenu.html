@@ -1,15 +1,25 @@
-<md-sidenav class="md-sidenav-left md-whiteframe-4dp"
+<!-- <md-sidenav class="md-sidenav-left md-whiteframe-4dp"
             style="height: 100%"
             md-disable-scroll-target="body"
             md-is-open="true"
             md-is-locked-open="true"
 
-            md-component-id="right">
+            md-component-id="right"> -->
+            
+            <!-- style="height: 100%" -->
+
+<md-sidenav ng-class="$ctrl.config.class"
+            md-disable-scroll-target="{{$ctrl.config.disableScrollTarget}}"
+            md-is-open="$ctrl.config.isOpen"
+            md-is-locked-open="$ctrl.config.isLockedOpen"
+            md-component-id="{{$ctrl.config.componentId}}">
 <!--md-theme="dark"-->
   <md-toolbar  class="md-theme-light md-hue-1">
     <!--md-theme="dark"-->
-    <h1 class="md-toolbar-tools">
-      Financiador
+    <h1 ng-if="$ctrl.config.toolbar" 
+    ng-class="$ctrl.config.toolbar.class" 
+    translate="{{$ctrl.config.toolbar.text}}">
+      <!-- Financiador -->
     </h1>
   </md-toolbar>
   <md-content layout-padding>

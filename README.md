@@ -31,3 +31,30 @@ pues trae las rutas ya configuradas
 ## Como crear componentes y modulos base
 proximamente individuos
 
+## Componentes
+# Side menu
+Componente que renderiza un menu lateral para la navegación interna de la aplicación, se utiliza dentro de la aplicacion de la siguiente manera
+```html
+<sidemenu menu="$ctrl.menu" config="$ctrl.configMenu"></sidemenu>
+```
+Estructura de los bindings
+```javascript
+$ctrl.menu = [
+       {state: "app.main.financiador", // ui-router state 
+       icon: "user", // material design icon name
+       name: "FINANCIADOR"}, // valor pasado a la directiva "translate" para mostrar
+       {state: "app.dashboard.usuarios", icon: "people", name: "USUARIOS"}
+     ];
+$ctrl.configMenu = {
+       class: ["md-sidenav-left", "md-whiteframe-4dp"], // ng-class  general
+       //https://material.angularjs.org/latest/api/directive/mdSidenav
+       disableScrollTarget: "body", 
+       isOpen: true,
+       isLockedOpen: true,
+       componentId: 'right',
+       toolbar: { // barra superior en el menu, opcional
+         class: ["md-theme-light", "md-hue-1"],
+          text: "Financiador"
+       }
+     };
+```

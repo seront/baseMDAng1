@@ -62,13 +62,19 @@ class UserAdminController {
     };
     this.objects = [object1, object2];
   }
-  action1(value) {
-    console.log(value);
-    console.log(this.action1Value);
-    this.action1Value = !this.action1Value;
-    // this.log("action1 ");
-    // this.log(value);
-  }
+  // action1(value) {
+  //   console.log(value);
+  //   console.log(this.action1Value);
+  //   this.action1Value = !this.action1Value;
+  //   // this.log("action1 ");
+  //   // this.log(value);
+  // }
+    accionTabla(name, object){
+      this.log("accionTabla");
+      this.log(name);
+      this.log(object);
+    }
+
   action2(value) {
     this.log("action2 ");
     this.log(value);

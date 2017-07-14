@@ -27,6 +27,13 @@ class TableController {
     }
   }
 
+  action(name, object){
+    this.$log.log("accion en la tabla");
+    this.$log.log(name);
+    this.$log.log(object);
+    this.onAction({name: name, object: object});
+  }
+
   order() {
     var salida = [];
     for (var item in this.config) {
@@ -53,6 +60,7 @@ export const TableComponent = {
     config: '<',
     headers: '<',
     objects: '<',
-    actions: '='
+    actions: '<',
+    onAction:'&'
   }
 };

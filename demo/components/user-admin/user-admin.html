@@ -1,10 +1,11 @@
 <md-whiteframe class="md-whiteframe-1dp" flex layout="column" layout-align="center center">
     <span>Tabla de muestra usuarios</span>
-     <span>{{$ctrl.actions}}</span>
-    <md-switch ng-model="$ctrl.actions[0].action1Value">action 1</md-switch>
-    <md-switch ng-model="$ctrl.action1Value">action 1</md-switch>
+      <span ng-if="$ctrl.pagination">si tiene paginacion user</span>
+    <!-- <md-switch ng-model="$ctrl.actions[0].action1Value">action 1</md-switch>
+    <md-switch ng-model="$ctrl.action1Value">action 1</md-switch> -->
     <custom-table
     config="$ctrl.config"
+    pagination= "$ctrl.pagination"
     object-config="$ctrl.objectConfig"
     headers="$ctrl.headers"
     objects="$ctrl.objects"

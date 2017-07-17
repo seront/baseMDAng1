@@ -1,10 +1,10 @@
-Table component
-<md-table-pagination ng-if="($ctrl.pagination.available === true)" ng-class="$ctrl.pagination.style" md-limit="$ctrl.pagination.limit"
-  md-page="$ctrl.pagination.page" md-total="{{$ctrl.pagination.total}}" md-page-select="$ctrl.pagination.pageSelect" md-boundary-links="$ctrl.pagination.boundaryLinks"
-  md-on-paginate="$ctrl.pagination.onPaginate" md-label="{{$ctrl.pagination.label}}">
+<span ng-if="$ctrl.pagination">con paginacion tabla</span>
 </md-table-pagination>
 <md-table-container>
-  <table md-table>
+  <table md-table
+  md-row-select="$ctrl.config.rowSelect"
+   multiple="$ctrl.config.multiple"
+   ng-model="$ctrl.selected" md-progress="promise">
     <thead md-head>
       <tr md-row>
         <th md-column ng-repeat="header in $ctrl.headers" md-numeric="header.numeric">
@@ -15,7 +15,15 @@ Table component
       </tr>
     </thead>
     <tbody md-body>
-      <tr md-row ng-repeat="object in $ctrl.objects track by $index" md-auto-select>
+      <tr md-row
+      md-select="object"
+      md-select-id="name"
+      md-on-select="$ctrl.config.select"
+      md-on-deselect="$ctrl.config.deselect"
+      x-md-auto-select="$ctrl.config.autoSelect"
+      ng-disabled="object[$ctrl.config.rowSelectDisable]"
+      ng-repeat="object in $ctrl.objects track by $index"
+      md-auto-select>
         <td md-cell ng-repeat="conf in $ctrl.newConfig">
           <!--{{conf[0]}} {{$ctrl.config.exclude[conf[0]]}}-->
           <!-- {{conf[0]}} -->
@@ -60,27 +68,25 @@ Table component
           </md-switch>
         </td>
         <td md-cell ng-repeat="action in $ctrl.actions">
-           <!-- ng-change="action.action(object)" -->
-          <md-switch ng-if="(action.type === 'switch')"
-           ng-change="$ctrl.action(action.name, object)"
-            aria-label="Switch 1"
-            ng-model="object[action.value]"
-            >
+          <!-- ng-change="action.action(object)" -->
+          <md-switch ng-if="(action.type === 'switch')" ng-change="$ctrl.onAction({name: action.text, object: object})" aria-label="Switch 1"
+            ng-model="object[action.value]">
+            {{action.name|translate}}
+            <!-- md-visible="action.tooltip.visible" -->
+            <md-tooltip ng-if="action.tooltip" ng-class="action.tooltip.style" md-z-index="action.tooltip.zIndex" md-delay="action.tooltip.delay"
+              md-autohide="action.tooltip.autohide" md-direction="{{action.tooltip.direction}}">
+              {{action.tooltip.text | translate}}
+            </md-tooltip>
           </md-switch>
-          <!-- ng-disabled="conf[1].disabled" -->
 
-          <!-- ng-click="action.action(object)" -->
-          <md-button ng-if="(action.type === 'button')"
-           ng-class="action.style"
-           ng-click="$ctrl.action(action.text, object)"
-             aria-label="{{action.name}}">
-            <md-icon ng-if="action.icon"
-            ng-class="action.icon.style">
-            {{action.icon.name}}
-          </md-icon>
-            <md-tooltip ng-if="(action.tooltip)"
-             ng-class="action.tooltip.style"
-              md-direction="{{action.tooltip.direction}}">
+          <md-button ng-if="(action.type === 'button')" ng-class="action.style" ng-click="$ctrl.onAction({name: action.text, object: object})"
+            aria-label="{{action.name}}">
+            <md-icon ng-if="action.icon" ng-class="action.icon.style">
+              {{action.icon.name}}
+            </md-icon>
+            <!-- md-visible="action.tooltip.visible" -->
+            <md-tooltip ng-if="action.tooltip" ng-class="action.tooltip.style" md-z-index="action.tooltip.zIndex" md-delay="action.tooltip.delay"
+              md-autohide="action.tooltip.autohide" md-direction="{{action.tooltip.direction}}">
               {{action.tooltip.text | translate}}
             </md-tooltip>
             <span ng-if="action.text">
@@ -94,7 +100,9 @@ Table component
   </table>
 </md-table-container>
 
-<md-table-pagination ng-if="($ctrl.pagination.available === true)" ng-class="$ctrl.pagination.style" md-limit="$ctrl.pagination.limit"
-  md-page="$ctrl.pagination.page" md-total="{{$ctrl.pagination.total}}" md-page-select="$ctrl.pagination.pageSelect" md-boundary-links="$ctrl.pagination.boundaryLinks"
-  md-on-paginate="$ctrl.pagination.onPaginate" md-label="{{$ctrl.pagination.label}}">
+<md-table-pagination ng-if="$ctrl.pagination" ng-class="$ctrl.pagination.style" md-limit="$ctrl.pagination.limit" md-page="$ctrl.pagination.page"
+  md-total="{{$ctrl.pagination.total}}" md-page-select="$ctrl.pagination.pageSelect" md-boundary-links="$ctrl.pagination.boundaryLinks"
+  md-on-paginate="$ctrl.onPaginate({page: $ctrl.pagination.page, limit: $ctrl.pagination.limit, total: total})" md-label="{{$ctrl.pagination.label}}">
+  <!-- md-label="{page: 'Página:', rowsPerPage: 'Filas por página:', of: 'de'}"> -->
+  <!-- md-label="$ctrl.pagination.label"> -->
 </md-table-pagination>

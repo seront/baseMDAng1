@@ -9,10 +9,15 @@ class UserAdminController {
       { name: "header3", numeric: false },
       { name: "header4", numeric: false }
     ];
-    this.config ={
+
+    this.config = {
       rowSelect: true, // seleccionar filas?
       multiple: true, // seleccionar mas de una fila a la vez?
-      progress: //promesa para mostrar barra de carga o cambio en 
+      progress: "", //promesa para mostrar barra de carga o cambio en
+      autoSelect: true, //true
+      rowSelect: true,
+      selectId: "", // propiedad del objeto que lo identifica como unico
+      rowSelectDisable: "" //propiedad del objeto en la fila que dice si la fila se puede seleccionar o no
     };
 
     this.objectConfig = {
@@ -27,26 +32,37 @@ class UserAdminController {
     };
 
     let action1 = {
-      action: this.action1,
       style: ["md-raised", "md-primary", "md-fab"],
-      // text: "action1",
+      text: "action1",
+      name: "action1",
       icon: {
         name: "people",
         style: []
       },
       tooltip: {
-        text: "ACTION1",
-        direction: "up",
-        style: []
+        text: "ACTION1", //texto a desplegar en el tooltip, se le aplica el filtro $translate
+        // direction: "top", //opcional, Direccion en la que se desplega el tooltip, default: bottom
+        // style: [], //opcional, array de strings nombre de clases a aplciar al elemento
+        // zIndex: 0, //opcional
+        // delay: 500, //opcional
+        // autohide: true //opcional, default: true
       },
-      type: "button",
-      value: 'switch'
+      type: "button"
     };
+
     let action2 = {
-      action: this.action2,
-      // condition:
-      name: "action2",
-      tooltip: "ACTION2",
+      style: [],
+      text: "action2",
+      name: "action2",//Nombre dentro del formulario
+      model: '', //Nombre de la propiedad del objeto asociada a este switch
+      tooltip: {
+        style: [],
+        zIndex: 0,
+        // visible: true,
+        // delay: 500,
+        direction: "top",
+        text: "action switch"
+      },
       type: "switch"
     };
     this.actions = [action1, action2];
@@ -67,19 +83,37 @@ class UserAdminController {
       switch: false
     };
     this.objects = [object1, object2];
+
+    // https://github.com/daniel-nagy/md-data-table#pagination
+    this.pagination = {
+      style: ["pagination-label"], //array de strings, nombres de clases a aplicar, opcional
+      limit: 2,
+      page: 1,
+      total: 5,
+      pageSelect: 1,
+      boundaryLinks: true, //boolean, default: false
+      label: "{of: 'DE', page: 'PAGINA', rowsPerPage: 'FILAS_PAGINAS'}", //formato del string q se le pasa a la tabla
+      limitOptions: [5, 10, 15]
+    };
   }
-  // action1(value) {
-  //   console.log(value);
-  //   console.log(this.action1Value);
-  //   this.action1Value = !this.action1Value;
-  //   // this.log("action1 ");
-  //   // this.log(value);
-  // }
-    accionTabla(name, object){
-      this.log("accionTabla");
-      this.log(name);
-      this.log(object);
+
+  accionTabla(name, object) {
+    this.log("accionTabla " + name);
+
+    switch (name) {
+      case 'action1':
+        this.log("accionTabla sw action1");
+        break;
+      case 'action2':
+        this.log("accionTabla sw action2");
+        action2(object);
+        break;
+
+      default:
+        this.log(name);
+        this.log(object);
     }
+  }
 
   action2(value) {
     this.log("action2 ");

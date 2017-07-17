@@ -11,6 +11,9 @@ class TableController {
     this.order();
     this.$log.log(this.objects);
     this.$log.log(this.actions);
+    this.$log.log("aciones de la paginación");
+    this.$log.log(this.pagination);
+    this.selected = [];
   }
 
   $onChange(changes) {
@@ -25,13 +28,6 @@ class TableController {
     if (changes.objects) {
       this.$log.log("Los objetos han cambiado");
     }
-  }
-
-  action(name, object){
-    this.$log.log("accion en la tabla");
-    this.$log.log(name);
-    this.$log.log(object);
-    this.onAction({name: name, object: object});
   }
 
   order() {
@@ -51,6 +47,12 @@ class TableController {
     this.newConfig = salida;
     this.$log.log(salida);
   }
+  select(object){
+    this.onSelect({object: object});
+  }
+  deselect(object){
+    this.onDeselect({object: object});
+  }
 }
 
 export const TableComponent = {
@@ -61,6 +63,7 @@ export const TableComponent = {
     headers: '<',
     objects: '<',
     actions: '<',
-    onAction:'&'
+    pagination: '<',
+    onAction: '&'
   }
 };

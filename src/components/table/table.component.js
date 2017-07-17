@@ -4,54 +4,43 @@ class TableController {
     this.$log = $log;
   }
   $onInit() {
-
     this.newConfig = [];
-    this.$log.log("Table componente headers");
-    this.$log.log(this.headers);
     this.order();
-    this.$log.log(this.objects);
-    this.$log.log(this.actions);
-    this.$log.log("aciones de la paginación");
-    this.$log.log(this.pagination);
+    // this.$log.log(this.pagination);
     this.selected = [];
   }
 
   $onChange(changes) {
     if (changes.config) {
       this.$log.log("La configuracion ha cambiado");
+      this.config = changes.config;
     }
 
     if (changes.headers) {
       this.$log.log("Los headers han cambiado");
+      this.headers = changes.headers;
     }
 
     if (changes.objects) {
       this.$log.log("Los objetos han cambiado");
+      this.objects = this.objects;
+    }
+    if(changes.pagination){
+      this.pagination = changes.pagination;
     }
   }
 
   order() {
     var salida = [];
-    for (var item in this.config) {
-      if (this.config[item] === undefined) {
-        // Nada
-      } else {
-        var ob = [item, this.config[item]];
+    for (var item in this.objectConfig) {
+        var ob = [item, this.objectConfig[item]];
         salida.push(ob);
-      }
     }
     salida.sort(function (a, b) {
       return (parseInt(a[1].order, 10) > parseInt(b[1].order, 10) ? 1 : -1);
     });
-
     this.newConfig = salida;
-    this.$log.log(salida);
-  }
-  select(object){
-    this.onSelect({object: object});
-  }
-  deselect(object){
-    this.onDeselect({object: object});
+    // this.$log.log(salida);
   }
 }
 
@@ -59,11 +48,14 @@ export const TableComponent = {
   template: require('./table.html'),
   controller: TableController,
   bindings: {
-    config: '<',
-    headers: '<',
-    objects: '<',
-    actions: '<',
-    pagination: '<',
-    onAction: '&'
+    'config': '<',
+    'headers': '<',
+    'objectConfig': '<',
+    'objects': '<',
+    'actions': '<',
+    'pagination': '<',
+    'onAction': '&',
+    'onSelection': '&',
+    'onDeselection': '&'
   }
 };

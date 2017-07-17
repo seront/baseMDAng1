@@ -120,6 +120,17 @@ class UserAdminController {
     this.log(value);
   }
 
+  onSelect(object){
+    console.log("onSelect user admin");
+    console.log(object);
+  }
+  onDeselect(object){
+    // this.log("onDeselect user admin");
+    // this.log(object);
+    console.log("onDeselect user admin");
+    console.log(object);
+  }
+
   $onInit() {
     this.log("user admin componente");
     // this.action1Value = false;

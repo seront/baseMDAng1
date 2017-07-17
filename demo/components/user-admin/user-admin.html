@@ -5,10 +5,12 @@
     <md-switch ng-model="$ctrl.action1Value">action 1</md-switch> -->
     <custom-table
     config="$ctrl.config"
-    pagination= "$ctrl.pagination"
+    pagination="$ctrl.pagination"
     object-config="$ctrl.objectConfig"
     headers="$ctrl.headers"
     objects="$ctrl.objects"
      actions="$ctrl.actions"
-     on-action="$ctrl.accionTabla(name, object)"></custom-table>
+     on-action="$ctrl.accionTabla(name, object)"
+     on-selection="$ctrl.onSelect"
+     on-deselection="$ctrl.onDeselect"></custom-table>
   </md-whiteframe>

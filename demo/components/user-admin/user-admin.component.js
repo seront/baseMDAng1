@@ -135,6 +135,21 @@ class UserAdminController {
     this.log("user admin componente");
     // this.action1Value = false;
   }
+
+  masObjetos(){
+    var object2 = {
+      key1: "value1",
+      key2: "value2",
+      key3: "value3",
+      key4: "value4",
+      switch: false
+    };
+    this.objects.push(object2);
+  }
+
+  onPaginate(page, limit, total){
+    console.log("page " + page + " limit: " + limit + " total: " + total);
+  }
 }
 
 export const UserAdmin = {

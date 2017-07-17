@@ -69,6 +69,7 @@ Para ser usada por otro componente se usa de la siguiente manera.
     headers="$ctrl.headers"
     objects="$ctrl.objects"
      actions="$ctrl.actions"
+     on-paginate="$ctrl.onPaginate(page, limit, total)"
      on-action="$ctrl.accionTabla(name, object)"
      on-selection="$ctrl.onSelect"
      on-deselection="$ctrl.onDeselect"></custom-table>
@@ -103,14 +104,15 @@ pagination: basado en https://github.com/daniel-nagy/md-data-table#pagination
 object-config: configuracion de los datos de cada fila (hasta ahora solo acepta datos tipo texto)
  ```javascript
 this.objectConfig = {
-      key1: { type: "text" },
+      key1: { type: "text", order: 0 },
       key2: {
         type: "date", options: {
           format: ""
-        }
+        },
+        order: 1
       },
-      key3: { type: "number" },
-      key4: { type: "text" }
+      key3: { type: "number", order: 2 },
+      key4: { type: "text" order: 3}
     };
 ```
 headers: array de encabezados de la tabla, si es numerico se establece como true, esto pasa por $translate
@@ -178,6 +180,16 @@ actions: array de configuración de los botones que se agregan al final de la ta
     };
     this.actions = [action1, action2];
 ```
+on-paginate: ejecutará una funcion del controlador cada vez que se presione uno de los botones de la paginacion de la tabla, esa funcion debe esperar recibir 3 valores
+    -page = pagina despues del cambio
+    -limit = limite de elementos
+    -total = total de elementos
+```javascript
+//recomendacion de como usar el binding "onAction"
+onPaginate(page, limit, total){
+    console.log("page " + page + " limit: " + limit + " total: " + total);
+  }
+```
 on-action: ejecutará una funcion del controlador cada vez que se presione uno de los botones de acciones de la tabla, esa funcion debe esperar recibir dos valores
     -name = nombre de la accion que se esta ejecutando, equivalente al "name" de una accion del array "actions".
     -object = objeto correspondiente a la fila en la que se esta ejecutando la accion
@@ -207,3 +219,4 @@ onSelect(object){
     //hacer algo con el objeto deseleccionado
   }
 ```
+     

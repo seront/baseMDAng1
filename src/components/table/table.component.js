@@ -54,6 +54,7 @@ export const TableComponent = {
     'objects': '<',
     'actions': '<',
     'pagination': '<',
+    'onPaginate': '&',
     'onAction': '&',
     'onSelection': '&',
     'onDeselection': '&'

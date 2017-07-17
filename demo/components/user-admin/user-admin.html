@@ -1,8 +1,6 @@
 <md-whiteframe class="md-whiteframe-1dp" flex layout="column" layout-align="center center">
     <span>Tabla de muestra usuarios</span>
-      <span ng-if="$ctrl.pagination">si tiene paginacion user</span>
-    <!-- <md-switch ng-model="$ctrl.actions[0].action1Value">action 1</md-switch>
-    <md-switch ng-model="$ctrl.action1Value">action 1</md-switch> -->
+<md-button ng-click="$ctrl.masObjetos()" class="md-raised md-primary"> aumentar los elementos</md-button>
     <custom-table
     config="$ctrl.config"
     pagination="$ctrl.pagination"
@@ -10,6 +8,7 @@
     headers="$ctrl.headers"
     objects="$ctrl.objects"
      actions="$ctrl.actions"
+     on-paginate="$ctrl.onPaginate(page, limit, total)"
      on-action="$ctrl.accionTabla(name, object)"
      on-selection="$ctrl.onSelect"
      on-deselection="$ctrl.onDeselect"></custom-table>

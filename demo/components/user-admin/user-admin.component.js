@@ -9,7 +9,13 @@ class UserAdminController {
       { name: "header3", numeric: false },
       { name: "header4", numeric: false }
     ];
-    this.config = {
+    this.config ={
+      rowSelect: true, // seleccionar filas?
+      multiple: true, // seleccionar mas de una fila a la vez?
+      progress: //promesa para mostrar barra de carga o cambio en 
+    };
+
+    this.objectConfig = {
       key1: { type: "text" },
       key2: {
         type: "date", options: {

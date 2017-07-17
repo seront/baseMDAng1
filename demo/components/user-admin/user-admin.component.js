@@ -28,8 +28,8 @@ class UserAdminController {
 
     let action1 = {
       action: this.action1,
-      style: ["md-raised", "md-primary"],
-      text: "action1",
+      style: ["md-raised", "md-primary", "md-fab"],
+      // text: "action1",
       icon: {
         name: "people",
         style: []

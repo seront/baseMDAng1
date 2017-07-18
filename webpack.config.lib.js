@@ -42,12 +42,12 @@ export default {
     // new webpack.optimize.DedupePlugin(),
     // Minify JS
 
-    new webpack.optimize.UglifyJsPlugin(
-      {
-        compress: {
-          unused: false
-        }
-      })
+    // new webpack.optimize.UglifyJsPlugin(
+    //   {
+    //     compress: {
+    //       unused: false
+    //     }
+    //   })
 
   ],
   module: {

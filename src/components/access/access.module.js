@@ -1,5 +1,6 @@
 import angular from 'angular';
 import ngMaterial from 'angular-material';
+import UrlModule from '../../url.service';
 import {AccessComponent} from './access.component';
 import {AccessLogin} from './access-login/access-login.component';
 // import {default as AccessLoginModule} from './access-login/access-login.module.js';
@@ -9,6 +10,7 @@ import { AccessService } from './access.service';
 
 export default angular.module('medipass.access', [
   ngMaterial,
+  UrlModule,
 // AccessLoginModule,
 AccessRecuperarModule
 ])

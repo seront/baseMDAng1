@@ -1,28 +1,39 @@
 <md-content layout="row" layout-align="center center">
   <md-card>
-    <md-card-title>
-      Iniciar sesión
+    <md-card-title layout="row" layout-align="center center">
+      Iniciar sesión en Medipass
     </md-card-title>
     <md-card-content layout="column" layout-align="center center">
+      <form name="loginForm" layout="column" layout-align="center center">
       <md-input-container>
-        <label>
-          Usuario
+        <label translate="USERNAME">
+
         </label>
-        <input type="email" ng-model="$ctrl.username">
+        <input type="text" name="username" ng-model="$ctrl.username" required>
+        <div ng-messages="loginForm.username.$error">
+            <div ng-message="required">
+              <span translate="USERNAME_REQUIRED"></span>
+            </div>
+          </div>
       </md-input-container>
       <md-input-container>
-        <label>
-          Contraseña
+        <label translate="PASSWORD">
+
         </label>
-        <input type="password"  ng-model="$ctrl.pwd">
+        <input type="password" name="password" ng-model="$ctrl.pwd" required>
+        <div ng-messages="loginForm.password.$error">
+            <div ng-message="required">
+              <span translate="PASSWORD_REQUIRED"></span>
+            </div>
+          </div>
       </md-input-container>
     </md-card-content>
     <md-car-actions layout="column">
-      <md-button class="md-primary md-raised" ng-click="$ctrl.login()">
-        Iniciar sesion
+      <md-button class="md-primary md-raised" translate="LOGIN" ng-disabled="loginForm.$invalid" ng-click="$ctrl.login()">
+        <span translate="LOGIN"></span>
       </md-button>
       <md-button class="" ui-sref="access.recuperar">
-        Recuperar contraseña
+        <span translate="FORGOT_PWD"></span>
       </md-button>
     </md-car-actions>
   </md-card>

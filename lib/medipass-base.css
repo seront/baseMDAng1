@@ -178,4 +178,13 @@ a.list-group-item.active:focus {
   border-bottom-color: #f78c40;
 }
 
+.pagination-label{
+  color: rgba(0, 0, 0, 0.54) !important
+}
+
+md-table-pagination div.label{
+   color: rgba(0, 0, 0, 0.54) !important;
+   font-size: 100%;
+}
+
 /*# sourceMappingURL=medipass-base.css.map*/

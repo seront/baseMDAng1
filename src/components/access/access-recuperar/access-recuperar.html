@@ -1,23 +1,42 @@
 <md-content layout="row" layout-align="center center">
   <md-card>
     <md-card-title>
-      Recuperar contraseña
+      <span translate="FORGOT_PWD">
     </md-card-title>
-    <md-card-content layout="column" layout-align="center center">
+
+    <md-card-content >
+      <form name="recuperarForm" layout="column" layout-align="center center">
       <md-input-container>
-        <label>
-          Nombre de usuario
+        <label translate="USERNAME">
+
         </label>
-        <input type="email">
+        <input type="text" name="username" ng-model="$ctrl.username" required>
+        <div ng-messages="recuperarForm.username.$error">
+            <div ng-message="required">
+              <span translate="USERNAME_REQUIRED"></span>
+      </div>
+      </div>
       </md-input-container>
-    </md-card-content>
-    <md-car-actions layout="column">
-      <md-button class="md-primary md-raised" ng-click="$ctrl.resetPwd()">
-        Recuperar contraseña
-      </md-button>
-      <md-button class="" ui-sref="access.login">
-        iniciar sesión
-      </md-button>
-    </md-car-actions>
+      <md-input-container>
+        <label translate="EMAIL">
+        </label>
+        <input type="email" name="email" ng-model="$ctrl.email" required>
+        <div ng-messages="recuperarForm.email.$error">
+          <div ng-message="required">
+            <span translate="EMAIL_REQUIRED"></span>
+          </div>
+        </div>
+      </md-input-container>
+
+      </md-card-content>
+      <md-car-actions layout="column">
+        <md-button class="md-primary md-raised" ng-disabled="recuperarForm.$invalid" ng-click="$ctrl.resetPwd()">
+          <span translate="FORGOT_PWD"></span>
+        </md-button>
+        <md-button class="" ui-sref="access.login">
+          <span translate="LOGIN"></span>
+        </md-button>
+      </md-car-actions>
+
   </md-card>
 </md-content>

@@ -2,7 +2,7 @@
   "name": "seront-material-1",
   "version": "1.0.0",
   "description": "Componentes minimos para comenzar con una aplicacion AngularJS con angular material",
-  "main": "lib/seront-material-1",
+  "main": "lib/medipass-base.js",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel security-check open:src lint:watch start-mockapi",

@@ -1,6 +1,9 @@
 class AccessRecuperarController{
-  constructor(){
-    //  console.log("AccessLoginController componente");
+  constructor(AccessService){
+      this.AccessService = AccessService;
+  }
+  resetPwd(){
+    this.AccessService.resetPwd(this.username, this.email);
   }
 }
 export const AccessRecuperar = {

@@ -7,18 +7,15 @@ export default {
   entry: {
     // Ruta del archivo index.js principal del modulo
     // main: path.resolve(__dirname, 'src/access'),
-    main: path.resolve(__dirname, 'src'),
+    main: path.resolve(__dirname, 'src/medipass.module'),
   },
   //bibliotecas externas que requiere este paquete para funcionar pero
   //que no se incluyen en el
   externals: {
     "angular": "angular",
     "angular-ui-router": "angular-ui-router",
-    "axios": "axios",
-    "promise": "promise",
-    "bootstrap": "bootstrap",
-    "jquery": "jquery",
     "angular-translate": "angular-translate",
+    "angular-material": "angular-material",
     "angular-material-data-table": "angular-material-data-table"
   },
   target: 'web',

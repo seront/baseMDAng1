@@ -3,7 +3,7 @@ class AccessRecuperarController{
       this.AccessService = AccessService;
   }
   resetPwd(){
-    this.AccessService.resetPwd(this.username, this.email).then((respose) => {});
+    this.AccessService.resetPwd(this.username, this.email).then((response) => { return response});
   }
 }
 export const AccessRecuperar = {

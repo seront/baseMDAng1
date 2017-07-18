@@ -1,3 +1,4 @@
+import angular from 'angular';
 class UrlService {
   constructor() {
     // 'ngInject';
@@ -6,6 +7,7 @@ class UrlService {
   }
 }
 
-export var UrlModule = angular.module('medipass.url', [])
+export default angular.module('medipass.url', [])
   .service("UrlService", UrlService)
   .name;
+

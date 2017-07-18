@@ -30,10 +30,10 @@
 
       </md-card-content>
       <md-car-actions layout="column">
-        <md-button class="md-primary md-raised" ng-disabled="recuperarForm.$invalid" ng-click="$ctrl.resetPwd()">
+        <md-button class="md-primary md-raised" ng-disabled="recuperarForm.$invalid" aria-label="FORGOT_PWD" ng-click="$ctrl.resetPwd()">
           <span translate="FORGOT_PWD"></span>
         </md-button>
-        <md-button class="" ui-sref="access.login">
+        <md-button class="" ui-sref="access.login" aria-label="LOGIN">
           <span translate="LOGIN"></span>
         </md-button>
       </md-car-actions>

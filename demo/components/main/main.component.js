@@ -10,7 +10,8 @@ class mainController{
        class: ["md-sidenav-left", "md-whiteframe-4dp"],
        disableScrollTarget: "body",
        isOpen: true,
-       isLockedOpen: true,
+      //  isLockedOpen: 'gt-md',
+       isLockedOpen: "$mdMedia('gt-md')",
        componentId: 'right',
        toolbar: {
          class: ["md-theme-light", "md-hue-1"],

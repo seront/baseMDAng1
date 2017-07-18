@@ -10,6 +10,7 @@ import translate from 'angular-translate';
 export {default as ComponentsModule} from "./components/components.module";
 
 export {default as CommonsModule} from './common/common.module';
+export {default as SideMenu} from './components/sidemenu/sidemenu.module'
 
 import {default as ComponentsModule} from "./components/components.module";
 import {default as CommonsModule} from './common/common.module';

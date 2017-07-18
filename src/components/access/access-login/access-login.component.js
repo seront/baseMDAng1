@@ -1,4 +1,3 @@
-
 class AccessLoginController{
 
   constructor($log, AccessService){

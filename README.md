@@ -50,7 +50,7 @@ $ctrl.configMenu = {
        //https://material.angularjs.org/latest/api/directive/mdSidenav
        disableScrollTarget: "body", 
        isOpen: true,
-       isLockedOpen: true,
+       isLockedOpen: "$mdMedia('gt-md')", //usando el servicio de mediaquery de angular material
        componentId: 'right',
        toolbar: { // barra superior en el menu, opcional
          class: ["md-theme-light", "md-hue-1"],

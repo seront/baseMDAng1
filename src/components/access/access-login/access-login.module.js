@@ -8,12 +8,9 @@ import { AccessLogin } from './access-login.component.js';
 
 export default angular.module('medipass.access.login', [uirouter])
   .component('accessLogin', AccessLogin)
-  // .config(function($stateProvider){
-  //   $stateProvider
-  //   .state('access.login', {
-  //     url: 'login',
-  //     component: 'accessLogin'
-  //   })
+  .config(function(){
+    'ngInject';
+    })
 
   // .config(routes)
   .name;

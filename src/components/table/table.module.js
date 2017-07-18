@@ -6,4 +6,5 @@ import {TableComponent} from './table.component';
 
 export default angular.module('medipass.table', [material, materialTable])
   .component('customTable', TableComponent)
+   .config(() => {'ngInject';})
   .name;

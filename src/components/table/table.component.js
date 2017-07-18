@@ -1,5 +1,6 @@
 class TableController {
   constructor($log) {
+    'ngInject';
     //  console.log("AccessMainController componente");
     this.$log = $log;
   }

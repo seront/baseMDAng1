@@ -1,5 +1,6 @@
 class AccessRecuperarController{
   constructor(AccessService){
+    'ngInject';
       this.AccessService = AccessService;
   }
   resetPwd(){

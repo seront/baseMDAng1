@@ -1,6 +1,7 @@
 class AccessLoginController{
 
   constructor($log, AccessService){
+    'ngInject';
       $log.log("AccessLoginController componente");
       this.AccessService = AccessService;
   }

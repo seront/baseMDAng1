@@ -28,4 +28,5 @@ export default angular.module('medipass.base', [
   CommonsModule])
   .config(translateConfig)
   .config(themeConfig)
+
   .name;

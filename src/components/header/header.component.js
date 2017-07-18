@@ -1,5 +1,6 @@
 class HeaderController{
   constructor($log){
+    'ngInject';
     //  console.log("AccessMainController componente");
     $log.log("Access componente");
   }

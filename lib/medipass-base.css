@@ -187,4 +187,9 @@ md-table-pagination div.label{
    font-size: 100%;
 }
 
+table{
+  word-wrap:break-word;
+  table-layout: fixed;
+}
+
 /*# sourceMappingURL=medipass-base.css.map*/

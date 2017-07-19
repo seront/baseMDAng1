@@ -186,3 +186,8 @@ md-table-pagination div.label{
    color: rgba(0, 0, 0, 0.54) !important;
    font-size: 100%;
 }
+
+table{
+  word-wrap:break-word;
+  table-layout: fixed;
+}

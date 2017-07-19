@@ -13,4 +13,11 @@ table.md-table{
   table-layout: fixed !important;
 }
 
+md-switch.md-checked{
+  background-color: rgba(139, 195, 74, 0.46) !important;
+}
+md-switch.md-checked .md-thumb{
+  background-color: #4CAF50 !important;
+}
+
 /*# sourceMappingURL=medipass-base.css.map*/

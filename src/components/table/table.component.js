@@ -43,6 +43,16 @@ class TableController {
     this.newConfig = salida;
     // this.$log.log(salida);
   }
+  $onChanges(cambios){
+    if(cambios.objects && cambios.objects.currentValue){
+      this.objects = cambios.objects.currentValue;
+    }
+
+    if(cambios.pagination && cambios.pagination.currentValue){
+      this.pagination = cambios.pagination.currentValue;
+    }
+
+  }
 }
 
 export const TableComponent = {

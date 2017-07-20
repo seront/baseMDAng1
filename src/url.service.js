@@ -2,8 +2,7 @@ import angular from 'angular';
 class UrlService {
   constructor() {
     // 'ngInject';
-    this.login = "http://medipass.cl/login";
-    this.resetPwd = "http://medipass.cl/resetPWD";
+    this.login = "http://dev.wso2:8280/usuarios/login";
   }
 }
 

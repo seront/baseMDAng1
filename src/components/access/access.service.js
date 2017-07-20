@@ -11,10 +11,23 @@ export class AccessService {
   login(username, pwd) {
 
     this.$log.log("login username: " + username + " pwd: " + pwd);
-    return this.$http.post(this.url.login,
-      {usuario: username,
-        contrasenia: pwd})
-      // .then((response) => {return response.data});
+    let params = {usuario: username, contrasenia: pwd};
+    let data = console.log(JSON.stringify(params));
+    let config = {
+      method: "POST",
+      url: this.url.login,
+      headers: {
+        'Content-Type': "application/json",
+        'content-type': "application/json",
+        "cache-control": "no-cache"
+      },
+      data: data
+    };
+    return this.$http(config)
+    // return this.$http.post(this.url.login,
+    //   {usuario: username,
+    //     contrasenia: pwd})
+    //   // .then((response) => {return response.data});
   }
   logout(){
     this.$log.log("logout");

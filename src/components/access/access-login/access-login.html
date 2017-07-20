@@ -13,7 +13,7 @@
 
         </label>
         <input type="text" name="username" ng-model="$ctrl.username" required>
-        <div ng-if="loginForm.username.$dirty" ng-messages="loginForm.username.$error">
+        <div  ng-messages="loginForm.username.$error && loginForm.$invalid">
             <div ng-message="required">
               <span translate="USERNAME_REQUIRED"></span>
             </div>
@@ -24,7 +24,8 @@
 
         </label>
         <input type="password" name="password" ng-model="$ctrl.pwd" required>
-        <div ng-if="loginForm.password.$dirty" ng-messages="loginForm.password.$error">
+        <!-- <div ng-if="loginForm.password.$dirty" ng-messages="loginForm.password.$error"> -->
+        <div  ng-messages="(loginForm.password.$error && loginForm.$invalid)">
             <div ng-message="required">
               <span translate="PASSWORD_REQUIRED"></span>
             </div>

@@ -1,6 +1,5 @@
 class UserAdminController {
   constructor($log) {
-    // this.$log = $log;
     this.action1Value = false;
     this.log = $log.log;
     this.headers = [
@@ -134,9 +133,12 @@ class UserAdminController {
   $onInit() {
     this.log("user admin componente");
     // this.action1Value = false;
+    this.objects = [];
   }
 
   masObjetos(){
+    let ar = this.objects;
+    this.objects = [];
     var object2 = {
       key1: "value1",
       key2: "value2",
@@ -144,7 +146,10 @@ class UserAdminController {
       key4: "value4",
       switch: false
     };
-    this.objects.push(object2);
+    console.log(this.objects);
+    console.log(ar);
+    ar.push(object2);
+    this.objects = ar;
   }
 
   onPaginate(page, limit, total){

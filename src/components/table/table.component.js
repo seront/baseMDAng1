@@ -7,28 +7,7 @@ class TableController {
   $onInit() {
     this.newConfig = [];
     this.order();
-    // this.$log.log(this.pagination);
     this.selected = [];
-  }
-
-  $onChange(changes) {
-    if (changes.config) {
-      this.$log.log("La configuracion ha cambiado");
-      this.config = changes.config;
-    }
-
-    if (changes.headers) {
-      this.$log.log("Los headers han cambiado");
-      this.headers = changes.headers;
-    }
-
-    if (changes.objects) {
-      this.$log.log("Los objetos han cambiado");
-      this.objects = this.objects;
-    }
-    if(changes.pagination){
-      this.pagination = changes.pagination;
-    }
   }
 
   order() {
@@ -43,11 +22,8 @@ class TableController {
     this.newConfig = salida;
     // this.$log.log(salida);
   }
-  $onChanges(cambios){
-    if(cambios.objects && cambios.objects.currentValue){
-      this.objects = cambios.objects.currentValue;
-    }
 
+  $onChanges(cambios){
     if(cambios.pagination && cambios.pagination.currentValue){
       this.pagination = cambios.pagination.currentValue;
     }
@@ -62,7 +38,7 @@ export const TableComponent = {
     'config': '<',
     'headers': '<',
     'objectConfig': '<',
-    'objects': '<',
+    'objects': "=",
     'actions': '<',
     'pagination': '<',
     'onPaginate': '&',

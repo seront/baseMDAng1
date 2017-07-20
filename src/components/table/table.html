@@ -73,7 +73,7 @@
         </td>
         <td md-cell ng-repeat="action in $ctrl.actions">
           <!-- ng-change="action.action(object)" -->
-          <md-switch ng-if="(action.type === 'switch')" ng-change="$ctrl.onAction({name: action.text, object: object})" aria-label="Switch 1"
+          <md-switch ng-if="(action.type === 'switch')" ng-change="$ctrl.onAction({name: action.name, object: object})" aria-label="Switch 1"
             ng-model="object[action.value]">
             {{action.name|translate}}
             <!-- md-visible="action.tooltip.visible" -->
@@ -83,7 +83,7 @@
             </md-tooltip>
           </md-switch>
 
-          <md-button ng-if="(action.type === 'button')" ng-class="action.style" ng-click="$ctrl.onAction({name: action.text, object: object})"
+          <md-button ng-if="(action.type === 'button')" ng-class="action.style" ng-click="$ctrl.onAction({name: action.name, object: object})"
             aria-label="{{action.name}}">
             <md-icon ng-if="action.icon" ng-class="action.icon.style">
               {{action.icon.name}}

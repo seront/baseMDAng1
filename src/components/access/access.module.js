@@ -16,7 +16,7 @@ AccessRecuperarModule
 ])
 .component('access', AccessComponent)
 .component('accessLogin', AccessLogin)
-.factory('AccessService', AccessService)
+.service('AccessService', AccessService)
 .config(routes)
 .config(($httpProvider)=>{
   'ngInject';

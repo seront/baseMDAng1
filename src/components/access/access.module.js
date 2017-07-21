@@ -18,4 +18,18 @@ AccessRecuperarModule
 .component('accessLogin', AccessLogin)
 .service('AccessService', AccessService)
 .config(routes)
+.config(($httpProvider)=>{
+  'ngInject';
+  if (!$httpProvider.defaults.headers.post) {
+        $httpProvider.defaults.headers.post = {};
+    }
+
+    // Answer edited to include suggestions from comments
+    // because previous version of code introduced browser-related errors
+    // extra
+    $httpProvider.defaults.headers.post['Content-Type'] = 'application/json';
+    $httpProvider.defaults.headers.post['Cache-Control'] = 'no-cache';
+    // $httpProvider.defaults.headers.post['content-type'] = 'application/json';
+    // $httpProvider.defaults.headers.post['Pragma'] = 'no-cache';
+})
 .name;

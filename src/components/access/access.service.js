@@ -10,18 +10,24 @@ export class AccessService {
   }
   login(username, pwd) {
 
-    this.$log.log("login username: " + username + " pwd: " + pwd);
+    // let params = {"usuario": username, "contrasenia": pwd};
     let params = {usuario: username, contrasenia: pwd};
-    let data = console.log(JSON.stringify(params));
+    let data = JSON.stringify(params);
+    // let data = JSON.stringify(JSON.stringify(params));
+   console.log(data);
     let config = {
       method: "POST",
       url: this.url.login,
-      headers: {
-        'Content-Type': "application/json",
-        'content-type': "application/json",
-        "cache-control": "no-cache"
-      },
-      data: data
+      // headers: {
+      //   'Content-Type': "application/json",
+      //   'content-type': "application/json",
+      //   // "cache-control": "no-cache"
+      // },
+
+      data: data,
+
+      // data: params,
+      // params: data
     };
     return this.$http(config)
     // return this.$http.post(this.url.login,

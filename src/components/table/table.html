@@ -71,7 +71,7 @@
             ng-disabled="conf[1].disabled">
           </md-switch>
         </td>
-        <td md-cell ng-repeat="action in $ctrl.actions">
+        <td md-cell ng-repeat="action in $ctrl.actions" ng-class="action.cellStyle">
           <md-switch ng-if="(action.type === 'switch')" ng-change="$ctrl.onAction({name: action.name, object: object})" aria-label="Switch 1"
             ng-model="object[action.value]">
             {{action.name|translate}}

@@ -15,16 +15,18 @@ class AccessLoginController {
     this.mensaje.visible = false;
     this.AccessService.login(this.username, this.pwd).then((response) => {
       if (response.data.response) {
+        console.log("sesion iniciada correctamente");
+        console.log(response.data.response.data);
+        this.AccessService.usuarioActual = response.data.response.data;
+        this.$state.go("app.dashboard");
+
+      } else {
+
         // console.log("error inicio de sesión");
         // console.log(response);
         this.mensaje.texto = "Los datos ingresados no coinciden con los existentes en nuestra base de datos";
         this.mensaje.visible = true;
         // console.log( this.mensaje);
-      } else {
-        console.log("sesion iniciada correctamente");
-        console.log(response.data.response);
-
-        this.$state.go("dashboard");
       }
     }, (error) => {
       console.log("Login error");

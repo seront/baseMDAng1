@@ -6,15 +6,18 @@ export default function routes($stateProvider) {
     .state('access', {
       abstract: true,
       // url: '',
-      component: 'access'
+      component: 'access',
+      authenticate: false
     })
     .state('access.login', {
       url: '/login',
-      component: 'accessLogin'
+      component: 'accessLogin',
+      authenticate: false
     })
     .state('access.recuperar', {
       url: '/recuperar',
-      component: 'accessRecuperar'
+      component: 'accessRecuperar',
+      authenticate: false
     })
     ;
 }

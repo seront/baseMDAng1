@@ -74,7 +74,7 @@
         <td md-cell ng-repeat="action in $ctrl.actions" ng-class="action.cellStyle">
           <md-switch ng-if="(action.type === 'switch')" ng-change="$ctrl.onAction({name: action.name, object: object})" aria-label="Switch 1"
             ng-model="object[action.value]">
-            {{action.name|translate}}
+            {{action.text|translate}}
             <md-tooltip ng-if="action.tooltip" ng-class="action.tooltip.style" md-z-index="action.tooltip.zIndex" md-delay="action.tooltip.delay"
               md-autohide="action.tooltip.autohide" md-direction="{{action.tooltip.direction}}">
               {{action.tooltip.text | translate}}

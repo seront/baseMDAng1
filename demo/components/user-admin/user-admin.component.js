@@ -26,7 +26,7 @@ class UserAdminController {
           format: ""
         }
       },
-      key3: { type: "number" },
+      key3: { type: "switch" },
       key4: { type: "switch", trueValue: 1, falseValue: 0 }
     };
 
@@ -140,12 +140,12 @@ class UserAdminController {
     var object2 = {
       key1: "value1",
       key2: "value2",
-      key3: "value3",
+      key3: true,
       key4: 1,
     };
-    console.log(this.objects);
-    console.log(ar);
+
     ar.push(object2);
+    console.log(ar);
     this.objects = ar;
   }
 

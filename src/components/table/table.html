@@ -1,8 +1,5 @@
-</md-table-pagination>
 <md-table-container>
-   <!-- md-row-select="$ctrl.config.rowSelect"
-   multiple="$ctrl.config.multiple" -->
-  <table md-table
+  <table print-table="$ctrl.objects" md-table
   md-row-select="$ctrl.config.rowSelect"
    multiple="{{$ctrl.config.multiple}}"
    ng-model="$ctrl.selected"
@@ -77,7 +74,7 @@
             {{conf[1].trueValue | json}}
           </md-switch>
         </td>
-        <td md-cell ng-repeat="action in $ctrl.actions" ng-class="action.cellStyle">
+        <td print-remove md-cell ng-repeat="action in $ctrl.actions" ng-class="action.cellStyle">
           <md-switch ng-if="(action.type === 'switch')" ng-change="$ctrl.onAction({name: action.name, object: object})" aria-label="Switch 1"
             ng-model="object[action.value]">
             {{action.text|translate}}
@@ -106,7 +103,7 @@
   </table>
 </md-table-container>
 
-<md-table-pagination ng-if="$ctrl.pagination" ng-class="$ctrl.pagination.style" md-limit="$ctrl.pagination.limit" md-page="$ctrl.pagination.page"
+<md-table-pagination print-remove ng-if="$ctrl.pagination" ng-class="$ctrl.pagination.style" md-limit="$ctrl.pagination.limit" md-page="$ctrl.pagination.page"
   md-total="{{$ctrl.pagination.total}}" md-page-select="$ctrl.pagination.pageSelect" md-boundary-links="$ctrl.pagination.boundaryLinks"
   md-on-paginate="$ctrl.onPaginate({page: $ctrl.pagination.page, limit: $ctrl.pagination.limit, total: total})" md-label="{{$ctrl.pagination.label}}">
   <!-- md-label="{page: 'Página:', rowsPerPage: 'Filas por página:', of: 'de'}"> -->

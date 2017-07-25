@@ -27,7 +27,7 @@ class UserAdminController {
         }
       },
       key3: { type: "number" },
-      key4: { type: "text" }
+      key4: { type: "switch", trueValue: 1, falseValue: 0 }
     };
 
     let action1 = {
@@ -71,15 +71,13 @@ class UserAdminController {
       key1: "value1",
       key2: "value2",
       key3: "value3",
-      key4: "value4",
-      switch: true
+      key4: 1,
     };
     var object2 = {
       key1: "value1",
       key2: "value2",
       key3: "value3",
-      key4: "value4",
-      switch: false
+      key4: "0",
     };
     this.objects = [object1, object2];
 
@@ -143,8 +141,7 @@ class UserAdminController {
       key1: "value1",
       key2: "value2",
       key3: "value3",
-      key4: "value4",
-      switch: false
+      key4: 1,
     };
     console.log(this.objects);
     console.log(ar);

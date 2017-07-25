@@ -2,7 +2,15 @@ class mainController{
   constructor($log){
      $log.log("Main componente");
      this.menu = [
-       {state: "app.main.financiador", icon: "user", name: "FINANCIADOR"},
+       {state: "app.main.financiador", icon: "attach_money", name: "FINANCIADOR", expanded: false, items: [
+        {
+          state: "app.main.financiador", icon: "location_on", name: "Financiar algo"
+        },
+        {
+          state: "app.main.financiador", icon: "location_on", name: "Financiar otra cosa"
+        }
+       ]
+      },
        {state: "app.dashboard.usuarios", icon: "people", name: "USUARIOS"}
      ];
 

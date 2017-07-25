@@ -40,10 +40,18 @@ Componente que renderiza un menu lateral para la navegación interna de la aplic
 Estructura de los bindings
 ```javascript
 $ctrl.menu = [
-       {state: "app.main.financiador", // ui-router state 
+       {items: [ // estos son sub items que puede tener el menu
+            {
+                state: "app.main.financiador", icon: "location_on", name: "Financiar algo"
+            }
+       ],
+       expanded: false, //Si muestra los sub items o no
        icon: "user", // material design icon name
        name: "FINANCIADOR"}, // valor pasado a la directiva "translate" para mostrar
-       {state: "app.dashboard.usuarios", icon: "people", name: "USUARIOS"}
+       {state: "app.dashboard.usuarios", // ui-router state 
+       expanded: false,
+       icon: "people",
+       name: "USUARIOS"}
      ];
 $ctrl.configMenu = {
        class: ["md-sidenav-left", "md-whiteframe-4dp"], // ng-class  general

@@ -1,9 +1,22 @@
 class SideMenuController{
-  constructor(){
-    //  console.log("sideMenuController componente");
+  constructor($state){
+    'ngInject';
+    this.go = $state.go;
   }
   $onInit() {
 
+    }
+
+    toggleExpand(item){
+      item.expanded = !item.expanded;
+    }
+
+    action(item){
+      if(item.items){
+        this.toggleExpand(item);
+      }else{
+        this.go(item.state);
+      }
     }
 }
 

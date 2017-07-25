@@ -28,6 +28,11 @@ class TableController {
       this.pagination = cambios.pagination.currentValue;
     }
 
+    if(cambios.actions && cambios.actions.currentValue){
+      this.actions = angular.copy(cambios.actions.currentValue);
+    }
+
+
   }
 }
 

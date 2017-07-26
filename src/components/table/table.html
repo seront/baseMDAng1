@@ -1,9 +1,6 @@
 <md-table-container>
-  <table print-table="$ctrl.objects" md-table
-  md-row-select="$ctrl.config.rowSelect"
-   multiple="{{$ctrl.config.multiple}}"
-   ng-model="$ctrl.selected"
-   md-progress="promise">
+  <table print-table="$ctrl.objects" md-table md-row-select="$ctrl.config.rowSelect" multiple="{{$ctrl.config.multiple}}" ng-model="$ctrl.selected"
+    md-progress="promise">
     <thead md-head>
       <tr md-row>
         <th md-column ng-repeat="header in $ctrl.headers" md-numeric="header.numeric" flex>
@@ -12,17 +9,11 @@
       </tr>
     </thead>
     <tbody md-body>
-      <tr md-row
-      ng-repeat="object in $ctrl.objects track by $index"
-      md-select="object"
-      md-select-id="name"
-      md-on-select="$ctrl.onSelection({object:object})"
-      md-on-deselect="$ctrl.onDeselection({object:object})"
-      x-md-auto-select="$ctrl.config.autoSelect"
-      ng-disabled="object[$ctrl.config.rowSelectDisable]"
-      md-auto-select>
+      <tr md-row ng-repeat="object in $ctrl.objects track by $index" md-select="object" md-select-id="name" md-on-select="$ctrl.onSelection({object:object})"
+        md-on-deselect="$ctrl.onDeselection({object:object})" x-md-auto-select="$ctrl.config.autoSelect" ng-disabled="object[$ctrl.config.rowSelectDisable]"
+        md-auto-select>
         <td md-cell ng-repeat="conf in $ctrl.newConfig">
-           <!-- {{conf[0]}} -->
+          <!-- {{conf[0]}} -->
 
           <md-checkbox ng-if="(conf[1].type === 'checkbox'&&conf[1].ic !== 'checkbox')" ng-model="object[conf[0]]" aria-label="{{conf[0]}}"
             ng-change="$ctrl.change(object)" ng-class="conf[1].style" ng-disabled="conf[1].disabled" class="md-primary">
@@ -59,16 +50,14 @@
           <span ng-if="(conf[1].type === 'date')" flex="{{conf[1].flex}}" ng-class="conf[1].style" ng-disabled="conf[1].disabled">
          {{object[conf[0]]|date: conf[1].format}}
       </span>
-          <md-switch ng-if="conf[1].type === 'switch' && typeof(conf[1].trueValue) == 'undefined' && typeof(conf[1].falseValue) == 'undefined'" ng-model="object[conf[0]]"
-          ng-change="$ctrl.onAction({name: conf[1].action, object: object})" aria-label="Switch 1"
+          <md-switch ng-if="conf[1].type === 'switch' && typeof(conf[1].trueValue) == 'undefined' && typeof(conf[1].falseValue) == 'undefined'"
+            ng-model="object[conf[0]]" ng-change="$ctrl.onAction({name: conf[1].action, object: object})" aria-label="Switch 1"
             ng-disabled="conf[1].disabled">
 
           </md-switch>
-          <md-switch ng-if="conf[1].type === 'switch' && typeof(conf[1].trueValue) != 'undefined' && typeof(conf[1].falseValue) != 'undefined'" ng-model="object[conf[0]]"
-          ng-true-value="{{conf[1].trueValue}}"
-          ng-false-value="{{conf[1].falseValue}}"
-          ng-change="$ctrl.onAction({name: conf[1].action, object: object})" aria-label="Switch 1"
-            ng-disabled="conf[1].disabled">
+          <md-switch ng-if="conf[1].type === 'switch' && typeof(conf[1].trueValue) != 'undefined' && typeof(conf[1].falseValue) != 'undefined'"
+            ng-model="object[conf[0]]" ng-true-value="{{conf[1].trueValue}}" ng-false-value="{{conf[1].falseValue}}" ng-change="$ctrl.onAction({name: conf[1].action, object: object})"
+            aria-label="Switch 1" ng-disabled="conf[1].disabled">
 
           </md-switch>
         </td>
@@ -101,9 +90,7 @@
   </table>
 </md-table-container>
 
-<md-table-pagination print-remove ng-if="$ctrl.pagination" ng-class="$ctrl.pagination.style" md-limit="$ctrl.pagination.limit" md-page="$ctrl.pagination.page"
-  md-total="{{$ctrl.pagination.total}}" md-page-select="$ctrl.pagination.pageSelect" md-boundary-links="$ctrl.pagination.boundaryLinks"
+<md-table-pagination print-remove ng-if="$ctrl.pagination" ng-class="$ctrl.pagination.style" md-limit="$ctrl.pagination.limit"
+  md-page="$ctrl.pagination.page" md-total="{{$ctrl.pagination.total}}" md-page-select="$ctrl.pagination.pageSelect" md-boundary-links="$ctrl.pagination.boundaryLinks"
   md-on-paginate="$ctrl.onPaginate({page: $ctrl.pagination.page, limit: $ctrl.pagination.limit, total: total})" md-label="{{$ctrl.pagination.label}}">
-  <!-- md-label="{page: 'Página:', rowsPerPage: 'Filas por página:', of: 'de'}"> -->
-  <!-- md-label="$ctrl.pagination.label"> -->
 </md-table-pagination>

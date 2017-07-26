@@ -2,10 +2,8 @@ import angular from 'angular';
 import material from 'angular-material'
 import materialTable from 'angular-material-data-table';
 import {TableComponent} from './table.component';
-import './style-print.css';
 
 
 export default angular.module('medipass.table', [material, materialTable])
   .component('customTable', TableComponent)
-   .config(() => {'ngInject';})
   .name;

@@ -72,7 +72,7 @@
             {{conf[1].trueValue | json}}
           </md-switch>
         </td>
-        <td print-remove md-cell ng-repeat="action in $ctrl.actions" ng-class="action.cellStyle">
+        <td print-remove md-cell ng-if="$ctrl.actions.length > 0" ng-repeat="action in $ctrl.actions" ng-class="action.cellStyle">
           <md-switch ng-if="(action.type === 'switch')" ng-change="$ctrl.onAction({name: action.name, object: object})" aria-label="Switch 1"
             ng-model="object[action.value]">
             {{action.text|translate}}

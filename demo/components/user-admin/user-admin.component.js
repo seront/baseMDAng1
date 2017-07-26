@@ -103,7 +103,7 @@ class UserAdminController {
         break;
       case 'action2':
         this.log("accionTabla sw action2");
-        action2(object);
+        this.action2(object);
         break;
 
       default:

@@ -121,6 +121,8 @@ this.objectConfig = {
       },
       key3: { type: "number", order: 2 },
       key4: { type: "text" order: 3}
+      key5: { type: "inputNumber", action: 'input-change', text: "DEPENDE", //configuración para input de número
+      options:{depends: "key4", min: 0, max: 10} }//depende del valor que tenga el key4 del objeto el la fila
     };
 ```
 headers: array de encabezados de la tabla, si es numerico se establece como true, esto pasa por $translate
@@ -138,15 +140,15 @@ var object1 = {
       key1: "value1",
       key2: "value2",
       key3: "value3",
-      key4: "value4",
-      switch: true
+      key4: 1,
+      key5: 6
     };
     var object2 = {
       key1: "value1",
       key2: "value2",
       key3: "value3",
-      key4: "value4",
-      switch: false
+      key4: 1,
+      key5: 10
     };
     this.objects = [object1, object2];
 ```

@@ -6,7 +6,8 @@ class UserAdminController {
       { name: "header1", numeric: false },
       { name: "header2", numeric: false },
       { name: "header3", numeric: false },
-      { name: "header4", numeric: false }
+      { name: "header4", numeric: false },
+      { name: "numero", numeric: true }
     ];
 
     this.config = {
@@ -27,7 +28,10 @@ class UserAdminController {
         }
       },
       key3: { type: "switch" },
-      key4: { type: "switch", trueValue: 1, falseValue: 0 }
+      key4: { type: "switch", trueValue: 1, falseValue: 0 },
+      key5: { type: "inputNumber", action: 'input-change', text: "NUMERO" },
+      key6: { type: "inputNumber", action: 'input-change', text: "DEPENDE",
+      options:{depends: "key4", min: 0, max: 10} }
     };
 
     let action1 = {
@@ -142,6 +146,7 @@ class UserAdminController {
       key2: "value2",
       key3: true,
       key4: 1,
+      key5: 5
     };
 
     ar.push(object2);

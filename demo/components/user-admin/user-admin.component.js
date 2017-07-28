@@ -154,8 +154,8 @@ class UserAdminController {
     this.objects = ar;
   }
 
-  onPaginate(page, limit, total){
-    console.log("page " + page + " limit: " + limit + " total: " + total);
+  onPaginate(page, limit){
+    console.log("page " + page + " limit: " + limit);
   }
 }
 

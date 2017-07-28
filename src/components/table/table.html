@@ -96,6 +96,8 @@
 </md-table-container>
 
 <md-table-pagination print-remove ng-if="$ctrl.pagination" ng-class="$ctrl.pagination.style" md-limit="$ctrl.pagination.limit"
+md-limit-options="$ctrl.pagination.limitOptions"
   md-page="$ctrl.pagination.page" md-total="{{$ctrl.pagination.total}}" md-page-select="$ctrl.pagination.pageSelect" md-boundary-links="$ctrl.pagination.boundaryLinks"
-  md-on-paginate="$ctrl.onPaginate({page: $ctrl.pagination.page, limit: $ctrl.pagination.limit, total: total})" md-label="{{$ctrl.pagination.label}}">
+  md-on-paginate="$ctrl.paginar(page, limit)" md-label="{{$ctrl.pagination.label}}">
+  <!-- md-on-paginate="$ctrl.onPaginate({page: $ctrl.pagination.page, limit: $ctrl.pagination.limit, total: total})" md-label="{{$ctrl.pagination.label}}"> -->
 </md-table-pagination>

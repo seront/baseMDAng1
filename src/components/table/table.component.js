@@ -8,6 +8,10 @@ class TableController {
     this.newConfig = [];
     this.order();
     this.selected = [];
+    if(this.pagination){
+      this.prevLimit = this.pagination.limit;
+    this.prevPage = this.pagination.page;
+    }
   }
 
   order() {
@@ -21,6 +25,15 @@ class TableController {
     });
     this.newConfig = salida;
     // this.$log.log(salida);
+  }
+
+  paginar(){
+    if(this.prevLimit !== this.pagination.limit || this.prevPage !== this.pagination.page){
+       console.log("paginar ", this.pagination.page, this.pagination.limit);
+        this.prevLimit = this.pagination.limit;
+    this.prevPage = this.pagination.page;
+    this.onPaginate({page: this.pagination.page, limit: this.pagination.limit})
+    }
   }
 
   $onChanges(cambios){

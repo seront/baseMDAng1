@@ -10,7 +10,7 @@
     </thead>
     <tbody md-body>
       <tr md-row ng-repeat="object in $ctrl.objects track by $index" md-select="object" md-select-id="name" md-on-select="$ctrl.onSelection(object)"
-        md-on-deselect="$ctrl.onDeselection({object:object})" x-md-auto-select="$ctrl.config.autoSelect" ng-disabled="object[$ctrl.config.rowSelectDisable]"
+        md-on-deselect="$ctrl.onDeselection(object)" x-md-auto-select="$ctrl.config.autoSelect" ng-disabled="object[$ctrl.config.rowSelectDisable]"
         md-auto-select>
         <td md-cell ng-repeat="conf in $ctrl.newConfig" ng-class="conf[1].cellStyle">
           <!-- {{conf[0]}} -->

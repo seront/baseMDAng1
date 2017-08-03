@@ -41,6 +41,10 @@ class TableController {
       this.actions = angular.copy(cambios.actions.currentValue);
     }
   }
+
+  onSelect(object){
+    this.onSelection({object:object});
+  }
 }
 
 export const TableComponent = {

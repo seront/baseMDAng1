@@ -12,7 +12,7 @@ class UserAdminController {
 
     this.config = {
       rowSelect: true, // seleccionar filas?
-      multiple: true, // seleccionar mas de una fila a la vez?
+      multiple: false, // seleccionar mas de una fila a la vez?
       progress: "", //promesa para mostrar barra de carga o cambio en
       autoSelect: true, //true
       rowSelect: true,
@@ -30,8 +30,7 @@ class UserAdminController {
       key3: { type: "switch" },
       key4: { type: "switch", trueValue: 1, falseValue: 0 },
       key5: { type: "inputNumber", action: 'input-change', text: "NUMERO" },
-      key6: { type: "inputNumber", action: 'input-change', text: "DEPENDE",
-      options:{depends: "key4", min: 0, max: 10} }
+      key6: { type: "text", avoid: '{"@nil":true}'}
     };
 
     let action1 = {
@@ -126,8 +125,6 @@ class UserAdminController {
     console.log(object);
   }
   onDeselect(object){
-    // this.log("onDeselect user admin");
-    // this.log(object);
     console.log("onDeselect user admin");
     console.log(object);
   }
@@ -146,7 +143,8 @@ class UserAdminController {
       key2: "value2",
       key3: true,
       key4: 1,
-      key5: 5
+      key5: 5,
+      key6: { "@nil": true}
     };
 
     ar.push(object2);

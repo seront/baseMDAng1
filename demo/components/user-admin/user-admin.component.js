@@ -3,7 +3,7 @@ class UserAdminController {
     this.action1Value = false;
     this.log = $log.log;
     this.headers = [
-      { name: "header1", numeric: false },
+      { name: "header1", numeric: false, tooltip:{text: "MENSAJE_TOOLTIP"} },
       { name: "header2", numeric: false },
       { name: "header3", numeric: false },
       { name: "header4", numeric: false },

@@ -11,7 +11,16 @@ class mainController{
         }
        ]
       },
-       {state: "app.dashboard.usuarios", icon: "people", name: "USUARIOS"}
+       {state: "app.dashboard.usuarios", icon: "people", name: "USUARIOS"},
+       {state: "app.main.financiador", icon: "attach_money", name: "otro", expanded: false, items: [
+        {
+          state: "app.main.financiador", icon: "location_on", name: "segunda"
+        },
+        {
+          state: "app.main.financiador", icon: "location_on", name: "tercera"
+        }
+       ]
+      }
      ];
 
      this.configMenu = {

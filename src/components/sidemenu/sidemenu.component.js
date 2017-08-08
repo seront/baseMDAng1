@@ -8,11 +8,22 @@ class SideMenuController{
     }
 
     toggleExpand(item){
-      item.expanded = !item.expanded;
+
+      // item.expanded = !item.expanded;
+
+      for(let i = 0; i < this.menu.length; i++){
+        if(angular.equals(this.menu[i], item) && item.items){
+          this.menu[i].expanded = !item.expanded;
+          // console.log("Es el mismo", this.menu[i].name, this.menu[i].expanded);
+        }else if(item.items && !angular.equals(this.menu[i], item)){
+          this.menu[i].expanded = false;
+          // console.log("Es deferente", this.menu[i].name, this.menu[i].expanded);
+        }
+      }
     }
 
     action(item){
-      if(item.items){
+        if(item.items){
         this.toggleExpand(item);
       }else{
         this.go(item.state);

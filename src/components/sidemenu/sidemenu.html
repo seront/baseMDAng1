@@ -1,4 +1,4 @@
-<md-sidenav style="height: 100%" ng-class="$ctrl.config.class"
+<md-sidenav ng-class="$ctrl.config.class"
   md-whiteframe="4"
 md-disable-scroll-target="{{$ctrl.config.disableScrollTarget}}"
 md-is-open="$ctrl.config.isOpen"
@@ -8,7 +8,7 @@ md-is-open="$ctrl.config.isOpen"
     <h1 ng-class="$ctrl.config.toolbar.class" translate="{{$ctrl.config.toolbar.text}}">
     </h1>
   </md-toolbar>
-  <md-content layout-padding style="height: 100%">
+  <md-content layout-padding ng-class="$ctrl.config.contentStyle">
      <md-list>
       <md-list-item ng-repeat-start="item in $ctrl.menu" ng-click="$ctrl.action(item)">
         <md-icon>{{item.icon}}</md-icon>

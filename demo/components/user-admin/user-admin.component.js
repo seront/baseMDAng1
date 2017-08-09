@@ -93,7 +93,8 @@ class UserAdminController {
       pageSelect: 1,
       boundaryLinks: true, //boolean, default: false
       label: "{of: 'DE', page: 'PAGINA', rowsPerPage: 'FILAS_PAGINAS'}", //formato del string q se le pasa a la tabla
-      limitOptions: [5, 10, 15]
+      limitOptions: [5, 10, 15],
+      footLabel: [{title:{text: "Probando:", style: []}, text: {text: "El label", style: []}}]
     };
   }
 

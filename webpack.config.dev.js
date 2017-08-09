@@ -6,12 +6,7 @@ import ExtractTextPlugin  from 'extract-text-webpack-plugin';
 
 const VENDOR_LIBS = [
   "angular",
-  "angular-ui-router",
-  "axios",
-  "promise",
-  "bootstrap",
-  "jquery",
-  "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+  "angular-ui-router"
 ];
 
 export default {

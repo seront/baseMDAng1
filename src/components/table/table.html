@@ -3,8 +3,8 @@
     md-progress="promise">
     <thead md-head>
       <tr md-row>
-        <th md-column ng-repeat="header in $ctrl.headers" md-numeric="header.numeric" flex>
-          <span translate="{{header.name}}"></span>
+        <th md-column ng-repeat="header in $ctrl.headers" md-numeric="header.numeric" flex class="table-header">
+          <p translate="{{header.name}}"></p>
           <md-tooltip ng-if="header.tooltip" ng-class="header.tooltip.style" md-z-index="header.tooltip.zIndex" md-delay="header.tooltip.delay"
               md-autohide="header.tooltip.autohide">
               {{header.tooltip.text | translate}}
@@ -43,13 +43,21 @@
 
           <span ng-if="(conf[1].type === 'text')" flex="{{conf[1].flex}}" ng-class="conf[1].style" ng-disabled="conf[1].disabled" translate="{{object[conf[0]]}}">
           </span>
+          <span ng-if="(conf[1].type === 'text-filter')" flex="{{conf[1].flex}}" ng-class="conf[1].style" ng-disabled="conf[1].disabled" translate="{{object[conf[0]]|filter}}">
+          </span>
 
           <span ng-if="conf[1].type === 'phone'" flex="{{conf[1].flex}}" ng-class="conf[1].style" ng-disabled="conf[1].disabled">
           {{object[conf[0]]}}
           </span>
 
+          <!-- <span ng-if="conf[1].type === 'number'" flex="{{conf[1].flex}}" ng-class="conf[1].style" ng-disabled="conf[1].disabled">
+            {{object[conf[0]]|filter: conf[1].filter}} {{object[conf[0]]|miles}}
+          </span> -->
           <span ng-if="conf[1].type === 'number'" flex="{{conf[1].flex}}" ng-class="conf[1].style" ng-disabled="conf[1].disabled">
-          <span ng-if="conf[1].currency === '$'">{{conf[1].currency}} {{object[conf[0]] | currency:"":0}}</span>
+            {{$ctrl.applyFilter(object[conf[0]], conf[1].filter)}}
+          </span>
+          <span ng-if="conf[1].type === 'currency'">
+          {{$ctrl.applyFilterCurrency(object[conf[0]], conf[1].symbol, conf[1].fractionSize)}}
           </span>
           <span ng-if="(conf[1].type === 'child')" flex="{{conf[1].flex}}" ng-class="conf[1].style" ng-disabled="conf[1].disabled">
          {{object[conf[0]][conf[1].options.child]}}

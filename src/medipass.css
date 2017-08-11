@@ -4,12 +4,12 @@ md-table-pagination div.label{
 }
 
 table{
-  word-wrap:break-word !important;
+  /* word-wrap:break-word !important; */
   /* table-layout: fixed !important; */
 }
 
 table.md-table{
-  word-wrap:break-word !important;
+  /* word-wrap:break-word !important; */
   /* table-layout: fixed !important; */
 }
 
@@ -22,4 +22,10 @@ md-switch.md-checked .md-bar{
 }
 md-switch.md-checked .md-thumb{
   background-color: #FFFFFF;
+}
+
+.table-header{
+  white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

@@ -7,18 +7,18 @@ import translate from 'angular-translate';
 
 //Asi funciona para exportar multiples modulos por separado
 
-export {default as ComponentsModule} from "./components/components.module";
+export { default as ComponentsModule } from "./components/components.module";
 
-export {default as CommonsModule} from './common/common.module';
-export {default as SideMenu} from './components/sidemenu/sidemenu.module'
+export { default as CommonsModule } from './common/common.module';
+export { default as SideMenu } from './components/sidemenu/sidemenu.module'
 
-import {default as ComponentsModule} from "./components/components.module";
-import {default as CommonsModule} from './common/common.module';
-import {default as themeConfig} from './medipass-theme';
-import {default as CustomTableModule} from './components/table/table.module';
-import {default as FinanciadorModule} from './components/financiador/financiador.module';
-import {default as PrestadorModule} from './components/prestador/prestador.module';
-import {translateConfig} from './medipass-translate';
+import { default as ComponentsModule } from "./components/components.module";
+import { default as CommonsModule } from './common/common.module';
+import { default as themeConfig } from './medipass-theme';
+import { default as CustomTableModule } from './components/table/table.module';
+import { default as FinanciadorModule } from './components/financiador/financiador.module';
+import { default as PrestadorModule } from './components/prestador/prestador.module';
+import { translateConfig } from './medipass-translate';
 // import {SidemenuComponent} from './components/sidemenu/sidemenu.component'
 
 // export var MedipassBase = angular.module('medipass.base', [
@@ -32,5 +32,14 @@ export default angular.module('medipass.base', [
   CommonsModule])
   .config(translateConfig)
   .config(themeConfig)
+  .filter("miles", () => {
+    return (input) => {
+      if (typeof input === 'number') {
+        return input.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+      } else if (typeof input === 'string') {
+        return input.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+      }
 
+    }
+  })
   .name;

@@ -21,7 +21,7 @@ class UserAdminController {
     };
 
     this.objectConfig = {
-      key1: { type: "text" },
+      key1: { type: "number", filter: 'miles' },
       key2: {
         type: "date", options: {
           format: ""
@@ -140,7 +140,7 @@ class UserAdminController {
     let ar = this.objects;
     this.objects = [];
     var object2 = {
-      key1: "value1",
+      key1: "1234567",
       key2: "value2",
       key3: true,
       key4: 1,
@@ -156,6 +156,7 @@ class UserAdminController {
   onPaginate(page, limit){
     console.log("page " + page + " limit: " + limit);
   }
+
 }
 
 export const UserAdmin = {

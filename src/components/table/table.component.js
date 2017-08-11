@@ -1,6 +1,7 @@
 class TableController {
-  constructor() {
+  constructor($filter) {
     'ngInject';
+    this.$filter = $filter;
   }
   $onInit() {
     this.newConfig = [];
@@ -45,6 +46,15 @@ class TableController {
   onSelect(object){
     this.onSelection({object:object});
   }
+
+  applyFilter(model, filter){
+    if(filter){
+      return this.$filter(filter)(model);
+    }else{
+      return model;
+    }
+
+    }
 }
 
 export const TableComponent = {

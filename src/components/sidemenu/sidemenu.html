@@ -9,7 +9,7 @@ md-is-open="$ctrl.config.isOpen"
     </span>
 
     <md-menu ng-if="$ctrl.config.toolbar.menu">
-      <md-button aria-label="config-menu" class="md-icon-button" ng-mouseenter="$mdMenu.open()">
+      <md-button aria-label="config-menu" class="md-icon-button" ng-click="$mdMenu.open()">
         <md-icon md-menu-origin>{{$ctrl.config.toolbar.menu.icon}}</md-icon>
       </md-button>
       <md-menu-content width="4" ng-mouseleave="$mdMenu.close()">

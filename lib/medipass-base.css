@@ -5,17 +5,17 @@ md-table-pagination div.label{
 
 table{
   word-wrap:break-word !important;
-  table-layout: fixed !important;
+  /* table-layout: fixed !important; */
 }
 
 table.md-table{
   word-wrap:break-word !important;
-  table-layout: fixed !important;
+  /* table-layout: fixed !important; */
 }
 
-table.md-table td.md-cell, table.md-table th.md-column{
-  text-align: center !important;
-}
+/* table.md-table td.md-cell, table.md-table th.md-column{
+   text-align: center !important;
+} */
 
 md-switch.md-checked .md-bar{
   background-color: #4CAF50;

@@ -31,9 +31,28 @@ class mainController{
        isLockedOpen: "$mdMedia('gt-md')",
        componentId: 'right',
        toolbar: {
-         class: ["md-theme-light", "md-hue-1"],
-          text: "Financiador"
-       }
+         class: ["md-theme-light", "md-hue-1", "flex"],
+          text: "Financiador",
+          menu: {
+            icon: "settings",
+          display: "name",
+          action: "cambio-prestador",
+          options:[
+            {name: "Prestador 1"},
+            {name: "Prestador 2"},
+            {name: "Prestador 3"}
+          ]
+        }
+       },
+        mainSelect: {
+          display: "name",
+          action: "cambio-prestador",
+          options:[
+            {name: "Prestador 1"},
+            {name: "Prestador 2"},
+            {name: "Prestador 3"}
+          ]
+        }
      };
   }
 

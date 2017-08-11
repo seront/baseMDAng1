@@ -36,6 +36,7 @@ export const SidemenuComponent = {
   controller: SideMenuController,
   bindings: {
     menu: '<',
-    config:'<'
+    config:'<',
+    onAction: "&"
   }
 };

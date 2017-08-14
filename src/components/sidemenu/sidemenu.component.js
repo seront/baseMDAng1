@@ -38,9 +38,9 @@ class SideMenuController{
         this.config = angular.copy(cambios.config.currentValue);
       }
       if(cambios.toolbar){
-        console.log("cambio-toolbar",cambios.toolbar);
+
         this.toolbar = angular.copy(cambios.toolbar.currentValue);
-         console.log("this.toolbar",cambios.toolbar);
+
       }
     }
 }

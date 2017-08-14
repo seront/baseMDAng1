@@ -30,7 +30,15 @@ class UserAdminController {
       key3: { type: "switch" },
       key4: { type: "switch", trueValue: 1, falseValue: 0 },
       key5: { type: "inputNumber", action: 'input-change', text: "NUMERO" },
-      key6: { type: "text", avoid: '{"@nil":true}'}
+      key6: { type: "text", avoid: '{"@nil":true}'},
+      key7: { type: "icon-set", options: [
+        {value: 1,
+        icon: "person", style: []},
+        {value: 2,
+        icon: "settings"},
+        {value: 3,
+        icon: "dashboard"}
+      ]}
     };
 
     let action1 = {
@@ -75,14 +83,23 @@ class UserAdminController {
       key2: "value2",
       key3: "value3",
       key4: 1,
+      key7: 1
     };
     var object2 = {
       key1: "value1",
       key2: "value2",
       key3: "value3",
       key4: "0",
+      key7: 2
     };
-    this.objects = [object1, object2];
+    var object3 = {
+      key1: "value1",
+      key2: "value2",
+      key3: "value3",
+      key4: "0",
+      key7: 3
+    };
+    this.objects = [object1, object2, object3];
 
     // https://github.com/daniel-nagy/md-data-table#pagination
     this.pagination = {
@@ -133,7 +150,7 @@ class UserAdminController {
   $onInit() {
     this.log("user admin componente");
     // this.action1Value = false;
-    this.objects = [];
+
   }
 
   masObjetos(){

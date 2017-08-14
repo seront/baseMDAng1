@@ -32,13 +32,15 @@ class SideMenuController{
 
     $onChanges(cambios){
       if(cambios.menu){
-        this.menu = cambios.menu.currentValue;
+        this.menu = angular.copy(cambios.menu.currentValue);
       }
       if(cambios.config){
-        this.config = cambios.config.currentValue;
+        this.config = angular.copy(cambios.config.currentValue);
       }
       if(cambios.toolbar){
-        this.toolbar = cambios.toolbar.currentValue;
+        console.log("cambio-toolbar",cambios.toolbar);
+        this.toolbar = angular.copy(cambios.toolbar.currentValue);
+         console.log("this.toolbar",cambios.toolbar);
       }
     }
 }

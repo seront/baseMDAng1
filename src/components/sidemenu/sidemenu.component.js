@@ -29,6 +29,18 @@ class SideMenuController{
         this.go(item.state);
       }
     }
+
+    $onChanges(cambios){
+      if(cambios.menu){
+        this.menu = cambios.menu.currentValue;
+      }
+      if(cambios.config){
+        this.config = cambios.config.currentValue;
+      }
+      if(cambios.toolbar){
+        this.toolbar = cambios.toolbar.currentValue;
+      }
+    }
 }
 
 export const SidemenuComponent = {
@@ -37,6 +49,7 @@ export const SidemenuComponent = {
   bindings: {
     menu: '<',
     config:'<',
+    toolbar: '<',
     onAction: "&"
   }
 };

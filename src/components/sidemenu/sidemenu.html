@@ -4,18 +4,18 @@ md-disable-scroll-target="{{$ctrl.config.disableScrollTarget}}"
 md-is-open="$ctrl.config.isOpen"
   md-is-locked-open="{{$ctrl.config.isLockedOpen}}"
   md-component-id="{{$ctrl.config.componentId}}">
-  <md-toolbar ng-if="$ctrl.config.toolbar" class="md-theme-light md-hue-1" layout="row" layout-align="center center" layout-padding>
-    <span ng-class="$ctrl.config.toolbar.class" translate="{{$ctrl.config.toolbar.text}}">
+  <md-toolbar ng-if="$ctrl.toolbar" class="md-theme-light md-hue-1" layout="row" layout-align="center center" layout-padding>
+    <span ng-class="$ctrl.toolbar.class" translate="{{$ctrl.toolbar.text}}">
     </span>
 
-    <md-menu ng-if="$ctrl.config.toolbar.menu">
+    <md-menu ng-if="$ctrl.toolbar.menu">
       <md-button aria-label="config-menu" class="md-icon-button" ng-click="$mdMenu.open()">
-        <md-icon md-menu-origin>{{$ctrl.config.toolbar.menu.icon}}</md-icon>
+        <md-icon md-menu-origin>{{$ctrl.toolbar.menu.icon}}</md-icon>
       </md-button>
       <md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
-        <md-menu-item ng-repeat="option in $ctrl.config.toolbar.menu.options track by $index">
-          <md-button ng-class="$ctrl.config.toolbar.menu.style" ng-click="$ctrl.onAction({name: $ctrl.config.toolbar.menu.action, object: option})">
-            {{option[$ctrl.config.toolbar.menu.display]}}
+        <md-menu-item ng-repeat="option in $ctrl.toolbar.menu.options track by $index">
+          <md-button ng-class="$ctrl.toolbar.menu.style" ng-click="$ctrl.onAction({name: $ctrl.toolbar.menu.action, object: option})">
+            {{option[$ctrl.toolbar.menu.display]}}
           </md-button>
         </md-menu-item>
     </md-menu>

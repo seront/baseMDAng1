@@ -43,6 +43,11 @@
 
           <span ng-if="(conf[1].type === 'text')" flex="{{conf[1].flex}}" ng-class="conf[1].style" ng-disabled="conf[1].disabled" translate="{{object[conf[0]]}}">
           </span>
+
+          <md-icon ng-if="(conf[1].type === 'icon')" ng-class="conf[1].style">
+            {{object[conf[0]]}}
+          </md-icon>
+
           <span ng-if="(conf[1].type === 'text-filter')" flex="{{conf[1].flex}}" ng-class="conf[1].style" ng-disabled="conf[1].disabled" translate="{{object[conf[0]]|filter}}">
           </span>
 

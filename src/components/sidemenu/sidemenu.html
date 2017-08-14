@@ -5,7 +5,10 @@ md-is-open="$ctrl.config.isOpen"
   md-is-locked-open="{{$ctrl.config.isLockedOpen}}"
   md-component-id="{{$ctrl.config.componentId}}">
   <md-toolbar ng-if="$ctrl.toolbar" class="md-theme-light md-hue-1" layout="row" layout-align="center center" layout-padding>
-    <span ng-class="$ctrl.toolbar.class" translate="{{$ctrl.toolbar.text}}">
+    <!-- <span ng-class="$ctrl.toolbar.class" translate="{{$ctrl.toolbar.text}}">
+    </span> -->
+    <span ng-class="$ctrl.toolbar.class">
+      {{$ctrl.toolbar.text}}
     </span>
 
     <md-menu ng-if="$ctrl.toolbar.menu">

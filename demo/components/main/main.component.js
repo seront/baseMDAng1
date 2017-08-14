@@ -54,6 +54,30 @@ class mainController{
           ]
         }
      };
+
+     this.configMenuToolbar = {
+        class: ["md-theme-light", "md-hue-1", "flex"],
+        text: "Prestador 1",
+        menu: {
+          icon: "expand_more",
+          display: "name",
+          action: "cambio-prestador",
+          options: [
+            { name: "Prestador 1" },
+            { name: "Prestador 2" },
+            { name: "Prestador 3" }
+          ]
+        }
+      };
+
+  }
+
+  actionSidemenu(name, object){
+    console.log(name, object);
+    let _tool = angular.copy(this.configMenuToolbar);
+    _tool.text = object.name;
+    console.log(_tool);
+    this.configMenuToolbar = angular.copy(_tool);
   }
 
 

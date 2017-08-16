@@ -1,3 +1,4 @@
+import './index.css';
 import '../src/medipass.css';
 import '../node_modules/angular-material/angular-material.css'
 import '../node_modules/angular-material-data-table/dist/md-data-table.css'

@@ -1,7 +1,18 @@
 class TableController {
-  constructor($filter) {
+  constructor($filter, $mdMedia, $scope, $window) {
     'ngInject';
     this.$filter = $filter;
+    this.$mdMedia = $mdMedia;
+    this.$window = $window;
+    this._actions = [];
+
+     $scope.$watch(() => { return $mdMedia('print'); }, (print) =>{
+    if (print === true && this._actions.length === 0) {
+      this.beforePrint();
+    } else if (print === false && this._actions.length >0 && this.actions.length === 0) {
+      this.afterPrint();
+    }
+  });
   }
   $onInit() {
     this.newConfig = [];
@@ -11,6 +22,26 @@ class TableController {
       this.prevLimit = this.pagination.limit;
       this.prevPage = this.pagination.page;
     }
+     this.$window.onbeforeprint = this.beforePrint;
+    this.$window.onafterprint = this.afterPrint;
+  }
+
+  beforePrint() {
+    console.log("beforePrint");
+    this._actions = angular.copy(this.actions);
+    this.actions = [];
+    console.log(this.actions);
+
+  }
+
+  afterPrint() {
+
+      console.log("afterPrint");
+    this.actions = angular.copy(this._actions);
+    this._actions = angular.copy([]);
+    // console.log(this.actions);
+     this.beforePrinting = false;
+
   }
 
   order() {

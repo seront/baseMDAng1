@@ -34,6 +34,7 @@ class TableController {
   }
 
   $onChanges(cambios) {
+    console.log("cambios tabla", cambios);
     if (cambios.pagination && cambios.pagination.currentValue) {
       this.pagination = cambios.pagination.currentValue;
     }

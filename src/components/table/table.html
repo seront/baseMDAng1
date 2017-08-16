@@ -96,7 +96,7 @@
           <span flex></span>
         </div>
         </td>
-        <td print-remove md-cell ng-if="$ctrl.actions.length > 0" ng-repeat="action in $ctrl.actions" ng-class="action.cellStyle">
+        <td md-cell ng-if="$ctrl.actions.length > 0" ng-repeat="action in $ctrl.actions" ng-class="action.cellStyle">
           <div ng-if="(action.type === 'switch')" layout="row">
             <span  flex></span>
           <md-switch ng-change="$ctrl.onAction({name: action.name, object: object})" aria-label="Switch 1"

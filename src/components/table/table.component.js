@@ -4,9 +4,10 @@ class TableController {
     this.$filter = $filter;
     this.$mdMedia = $mdMedia;
     this.$window = $window;
+    this.$scope = $scope;
     this._actions = [];
 
-     $scope.$watch(() => { return $mdMedia('print'); }, (print) =>{
+     this.$scope.$watch(() => { return this.$mdMedia('print'); }, (print) =>{
     if (print === true && this._actions.length === 0) {
       this.beforePrint();
     } else if (print === false && this._actions.length >0 && this.actions.length === 0) {

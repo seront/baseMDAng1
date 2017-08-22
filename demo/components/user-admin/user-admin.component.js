@@ -30,7 +30,8 @@ class UserAdminController {
       key3: { type: "switch" },
       key4: { type: "switch", trueValue: 1, falseValue: 0 },
       key5: { type: "inputNumber", action: 'input-change', text: "NUMERO" },
-      key6: { type: "text", avoid: '{"@nil":true}'},
+      // key6: { type: "text", avoid: '{"@nil":true}'},
+      key6: { type: "copy", options:{child: "key2"}},
       key7: { type: "icon-set", options: [
         {value: 1,
         icon: "person", style: []},

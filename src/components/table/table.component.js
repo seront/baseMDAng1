@@ -50,9 +50,9 @@ class TableController {
     this.onSelection({object:object});
   }
 
-  applyFilter(model, filter){
+  applyFilter(model, filter, option){
     if(filter){
-      return this.$filter(filter)(model);
+      return this.$filter(filter)(model, option);
     }else{
       return model;
     }

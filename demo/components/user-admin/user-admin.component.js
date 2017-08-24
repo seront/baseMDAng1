@@ -21,11 +21,9 @@ class UserAdminController {
     };
 
     this.objectConfig = {
-      key1: { type: "number", filter: 'miles' },
+      key1: { type: "text-filter", filter: 'capitalize', option: true },
       key2: {
-        type: "date", options: {
-          format: ""
-        }
+        type: "number", filter: 'miles'
       },
       key3: { type: "switch" },
       key4: { type: "switch", trueValue: 1, falseValue: 0 },
@@ -81,21 +79,21 @@ class UserAdminController {
     // this.objects = [];
     var object1 = {
       key1: "value1",
-      key2: "value2",
+      key2: 111222333,
       key3: "value3",
       key4: 1,
       key7: 1
     };
     var object2 = {
-      key1: "value1",
-      key2: "value2",
+      key1: "value1 VALUE Value",
+      key2: 111222333,
       key3: "value3",
       key4: "0",
       key7: 2
     };
     var object3 = {
       key1: "value1",
-      key2: "value2",
+      key2: 111222333444,
       key3: "value3",
       key4: "0",
       key7: 3

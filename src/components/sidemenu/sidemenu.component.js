@@ -1,7 +1,9 @@
 class SideMenuController{
-  constructor($state){
+  constructor($state, $mdSidenav, $log){
     'ngInject';
     this.go = $state.go;
+    this.$mdSidenav = $mdSidenav;
+    this.$log = $log;
   }
   $onInit() {
 
@@ -27,7 +29,17 @@ class SideMenuController{
         this.toggleExpand(item);
       }else{
         this.go(item.state);
+        this.toggleSideMenu();
       }
+    }
+
+    toggleSideMenu(){
+      if(this.config.componentId){
+        this.$mdSidenav(this.config.componentId).toggle();
+      }else{
+        this.$log.error("the sidemenu requires an 'componentId'");
+      }
+
     }
 
     $onChanges(cambios){

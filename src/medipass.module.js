@@ -33,13 +33,27 @@ export default angular.module('medipass.base', [
   .config(translateConfig)
   .config(themeConfig)
   .filter("miles", () => {
-    return (input) => {
+    return (input, simbol) => {
+      let fv = input;
+      let out= "";
       if (typeof input === 'number') {
-        return input.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+        fv = input.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+        out = simbol ? simbol +  fv : fv;
+        return out;
       } else if (typeof input === 'string') {
-        return input.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+        fv = input.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+        out = simbol ? simbol +  fv : fv;
+        return out
+      }else{
+        return fv;
       }
 
     }
   })
+  .filter('capitalize', function() {
+    return function(input, all) {
+    var reg = all ? /([^\W_]+[^\s-]*) */g : /([^\W_]+[^\s-]*)/;
+    return (!!input) ? input.replace(reg, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
+    }
+    })
   .name;

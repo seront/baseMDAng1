@@ -55,7 +55,7 @@
             </md-icon>
             </div>
           </div>
-          <div ng-if="(conf[1].type === 'text-array')">
+          <div ng-if="(conf[1].type === 'array-text')">
               <span ng-repeat="value in object[conf[0]]">
                 <span>
                   {{value|translate}}
@@ -64,7 +64,7 @@
               </span>
           </div>
 
-          <div ng-if="(conf[1].type === 'object-array')">
+          <div ng-if="(conf[1].type === 'array-object')">
               <span ng-repeat="value in object[conf[0]]">
                 <span>
                   {{value[conf[1].value]}}

@@ -42,7 +42,15 @@ class TableController {
     }
 
     if (cambios.actions && cambios.actions.currentValue) {
-      this.actions = angular.copy(cambios.actions.currentValue);
+      if(cambios.actions.currentValue[0].order){
+        let salida = [];
+        salida.sort(function (a, b) {
+          return (parseInt(a[1].order, 10) > parseInt(b[1].order, 10) ? 1 : -1);
+        });
+      }else{
+        this.actions = angular.copy(cambios.actions.currentValue);
+      }
+
     }
   }
 

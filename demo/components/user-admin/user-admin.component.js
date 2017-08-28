@@ -15,7 +15,7 @@ class UserAdminController {
       multiple: false, // seleccionar mas de una fila a la vez?
       progress: "", //promesa para mostrar barra de carga o cambio en
       autoSelect: true, //true
-      rowSelect: true,
+      rowSelect: false,
       selectId: "", // propiedad del objeto que lo identifica como unico
       rowSelectDisable: "" //propiedad del objeto en la fila que dice si la fila se puede seleccionar o no
     };
@@ -72,7 +72,11 @@ class UserAdminController {
         direction: "top",
         text: "action switch"
       },
-      type: "switch"
+      type: "switch",
+      hide: {
+        property: 'key2',
+        value: 111222333
+      }
     };
     this.actions = [action1, action2];
 

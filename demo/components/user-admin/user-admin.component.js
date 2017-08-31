@@ -156,6 +156,10 @@ class UserAdminController {
 
   }
 
+  quitarAcciones(){
+    this.actions = [];
+  }
+
   masObjetos(){
     let ar = this.objects;
     this.objects = [];

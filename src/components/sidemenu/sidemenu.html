@@ -42,7 +42,8 @@ md-is-open="$ctrl.config.isOpen"
       <md-content ng-if="item.expanded" style="padding: 0px;">
         <md-divider></md-divider>
         <md-list ng-if="item.items" style="padding: 0px;">
-          <md-list-item layout="row" ng-repeat="subitem in item.items" ui-sref="{{subitem.state}}">
+          <!-- <md-list-item layout="row" ng-repeat="subitem in item.items" ui-sref="{{subitem.state}}"> -->
+          <md-list-item layout="row" ng-repeat="subitem in item.items" ng-click="$ctrl.action(subitem)">
             <span flex="15">
         </span>
             <md-icon>{{subitem.icon}}</md-icon>

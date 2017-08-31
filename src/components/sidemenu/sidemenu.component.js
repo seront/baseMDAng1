@@ -28,14 +28,16 @@ class SideMenuController{
         if(item.items){
         this.toggleExpand(item);
       }else{
-        this.go(item.state);
         this.toggleSideMenu();
+        this.go(item.state);
       }
     }
 
     toggleSideMenu(){
       if(this.config.componentId){
-        this.$mdSidenav(this.config.componentId).toggle();
+        this.$mdSidenav(this.config.componentId).toggle().then(response=>{
+          this.$log.log('toggled');
+        });
       }else{
         this.$log.error("the sidemenu requires an 'componentId'");
       }

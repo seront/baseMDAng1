@@ -10,7 +10,7 @@ import webpack from 'webpack';
 
 import config from '../webpack.config.dev';
 
-const port = 3000;
+const port = 3100;
 const app = express();
 const compiler = webpack(config);
 

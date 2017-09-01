@@ -18,7 +18,8 @@ export default {
     "angular-material": "angular-material",
     "angular-material-data-table": "angular-material-data-table"
   },
-  target: 'web',
+  // target: 'web',
+  target: 'node',
   output: {
     path: path.resolve(__dirname, 'lib'),
     // nombre de la libreria

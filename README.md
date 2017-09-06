@@ -40,10 +40,18 @@ Componente que renderiza un menu lateral para la navegación interna de la aplic
 Estructura de los bindings
 ```javascript
 $ctrl.menu = [
-       {state: "app.main.financiador", // ui-router state 
+       {items: [ // estos son sub items que puede tener el menu
+            {
+                state: "app.main.financiador", icon: "location_on", name: "Financiar algo"
+            }
+       ],
+       expanded: false, //Si muestra los sub items o no
        icon: "user", // material design icon name
        name: "FINANCIADOR"}, // valor pasado a la directiva "translate" para mostrar
-       {state: "app.dashboard.usuarios", icon: "people", name: "USUARIOS"}
+       {state: "app.dashboard.usuarios", // ui-router state 
+       expanded: false,
+       icon: "people",
+       name: "USUARIOS"}
      ];
 $ctrl.configMenu = {
        class: ["md-sidenav-left", "md-whiteframe-4dp"], // ng-class  general
@@ -113,6 +121,8 @@ this.objectConfig = {
       },
       key3: { type: "number", order: 2 },
       key4: { type: "text" order: 3}
+      key5: { type: "inputNumber", action: 'input-change', text: "DEPENDE", //configuración para input de número
+      options:{depends: "key4", min: 0, max: 10} }//depende del valor que tenga el key4 del objeto el la fila
     };
 ```
 headers: array de encabezados de la tabla, si es numerico se establece como true, esto pasa por $translate
@@ -130,15 +140,15 @@ var object1 = {
       key1: "value1",
       key2: "value2",
       key3: "value3",
-      key4: "value4",
-      switch: true
+      key4: 1,
+      key5: 6
     };
     var object2 = {
       key1: "value1",
       key2: "value2",
       key3: "value3",
-      key4: "value4",
-      switch: false
+      key4: 1,
+      key5: 10
     };
     this.objects = [object1, object2];
 ```

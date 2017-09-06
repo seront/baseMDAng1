@@ -4,6 +4,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default {
   devtool: 'source-map',
+  resolve: { symlinks: false },
   entry: {
     // Ruta del archivo index.js principal del modulo
     // main: path.resolve(__dirname, 'src/access'),
@@ -18,7 +19,8 @@ export default {
     "angular-material": "angular-material",
     "angular-material-data-table": "angular-material-data-table"
   },
-  target: 'web',
+  // target: 'web',
+  target: 'node',
   output: {
     path: path.resolve(__dirname, 'lib'),
     // nombre de la libreria
@@ -43,11 +45,13 @@ export default {
     // Minify JS
 
     // new webpack.optimize.UglifyJsPlugin(
-    //   {
-    //     compress: {
-    //       unused: false
-    //     }
-    //   })
+    //   // {
+    //   //   // compress: {
+    //   //   //   unused: false
+    //   //   // },
+    //   //   sourceMap: true
+    //   // }
+    // )
 
   ],
   module: {

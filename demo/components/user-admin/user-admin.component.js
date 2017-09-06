@@ -1,34 +1,43 @@
 class UserAdminController {
   constructor($log) {
-    // this.$log = $log;
     this.action1Value = false;
     this.log = $log.log;
     this.headers = [
-      { name: "header1", numeric: false },
+      { name: "header1", numeric: false, tooltip:{text: "MENSAJE_TOOLTIP"} },
       { name: "header2", numeric: false },
       { name: "header3", numeric: false },
-      { name: "header4", numeric: false }
+      { name: "header4", numeric: false },
+      { name: "numero", numeric: true }
     ];
 
     this.config = {
       rowSelect: true, // seleccionar filas?
-      multiple: true, // seleccionar mas de una fila a la vez?
+      multiple: false, // seleccionar mas de una fila a la vez?
       progress: "", //promesa para mostrar barra de carga o cambio en
       autoSelect: true, //true
-      rowSelect: true,
+      rowSelect: false,
       selectId: "", // propiedad del objeto que lo identifica como unico
       rowSelectDisable: "" //propiedad del objeto en la fila que dice si la fila se puede seleccionar o no
     };
 
     this.objectConfig = {
-      key1: { type: "text" },
+      key1: { type: "text-filter", filter: 'capitalize', option: true },
       key2: {
-        type: "date", options: {
-          format: ""
-        }
+        type: "number", filter: 'miles'
       },
-      key3: { type: "number" },
-      key4: { type: "text" }
+      key3: { type: "switch" },
+      key4: { type: "switch", trueValue: 1, falseValue: 0 },
+      key5: { type: "inputNumber", action: 'input-change', text: "NUMERO" },
+      // key6: { type: "text", avoid: '{"@nil":true}'},
+      key6: { type: "copy", options:{child: "key2"}},
+      key7: { type: "icon-set", options: [
+        {value: 1,
+        icon: "person", style: []},
+        {value: 2,
+        icon: "settings"},
+        {value: 3,
+        icon: "dashboard"}
+      ]}
     };
 
     let action1 = {
@@ -63,26 +72,37 @@ class UserAdminController {
         direction: "top",
         text: "action switch"
       },
-      type: "switch"
+      type: "switch",
+      hide: {
+        property: 'key2',
+        value: 111222333
+      }
     };
     this.actions = [action1, action2];
 
     // this.objects = [];
     var object1 = {
       key1: "value1",
-      key2: "value2",
+      key2: 111222333,
       key3: "value3",
-      key4: "value4",
-      switch: true
+      key4: 1,
+      key7: 1
     };
     var object2 = {
-      key1: "value1",
-      key2: "value2",
+      key1: "value1 VALUE Value",
+      key2: 111222333,
       key3: "value3",
-      key4: "value4",
-      switch: false
+      key4: "0",
+      key7: 2
     };
-    this.objects = [object1, object2];
+    var object3 = {
+      key1: "value1",
+      key2: 111222333444,
+      key3: "value3",
+      key4: "0",
+      key7: 3
+    };
+    this.objects = [object1, object2, object3];
 
     // https://github.com/daniel-nagy/md-data-table#pagination
     this.pagination = {
@@ -93,7 +113,8 @@ class UserAdminController {
       pageSelect: 1,
       boundaryLinks: true, //boolean, default: false
       label: "{of: 'DE', page: 'PAGINA', rowsPerPage: 'FILAS_PAGINAS'}", //formato del string q se le pasa a la tabla
-      limitOptions: [5, 10, 15]
+      limitOptions: [5, 10, 15],
+      footLabel: [{title:{text: "Probando:", style: []}, text: {text: "El label", style: []}}]
     };
   }
 
@@ -106,7 +127,7 @@ class UserAdminController {
         break;
       case 'action2':
         this.log("accionTabla sw action2");
-        action2(object);
+        this.action2(object);
         break;
 
       default:
@@ -125,8 +146,6 @@ class UserAdminController {
     console.log(object);
   }
   onDeselect(object){
-    // this.log("onDeselect user admin");
-    // this.log(object);
     console.log("onDeselect user admin");
     console.log(object);
   }
@@ -134,22 +153,34 @@ class UserAdminController {
   $onInit() {
     this.log("user admin componente");
     // this.action1Value = false;
+
+  }
+
+  quitarAcciones(){
+    this.actions = [];
   }
 
   masObjetos(){
+    let ar = this.objects;
+    this.objects = [];
     var object2 = {
-      key1: "value1",
+      key1: "1234567",
       key2: "value2",
-      key3: "value3",
-      key4: "value4",
-      switch: false
+      key3: true,
+      key4: 1,
+      key5: 5,
+      key6: { "@nil": true}
     };
-    this.objects.push(object2);
+
+    ar.push(object2);
+    console.log(ar);
+    this.objects = ar;
   }
 
-  onPaginate(page, limit, total){
-    console.log("page " + page + " limit: " + limit + " total: " + total);
+  onPaginate(page, limit){
+    console.log("page " + page + " limit: " + limit);
   }
+
 }
 
 export const UserAdmin = {

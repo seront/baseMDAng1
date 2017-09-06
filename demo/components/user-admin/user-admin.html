@@ -1,6 +1,11 @@
-<md-whiteframe class="md-whiteframe-1dp" flex layout="column" layout-align="center center">
+<md-whiteframe class="md-whiteframe-1dp" flex layout="column" >
     <span>Tabla de muestra usuarios</span>
-<md-button ng-click="$ctrl.masObjetos()" class="md-raised md-primary"> aumentar los elementos</md-button>
+<md-button ng-click="$ctrl.masObjetos()" class="md-raised md-primary">
+  aumentar los elementos
+</md-button>
+<md-button ng-click="$ctrl.quitarAcciones()" class="md-raised ">
+Quitar acciones
+</md-button>
     <custom-table
     config="$ctrl.config"
     pagination="$ctrl.pagination"

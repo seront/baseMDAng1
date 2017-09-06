@@ -3,7 +3,7 @@ import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default {
-  devtool: 'source-map',
+  // devtool: 'source-map',
   entry: {
     // Ruta del archivo index.js principal del modulo
     // main: path.resolve(__dirname, 'src/access'),

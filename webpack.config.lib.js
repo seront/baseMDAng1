@@ -44,14 +44,14 @@ export default {
     // new webpack.optimize.DedupePlugin(),
     // Minify JS
 
-    new webpack.optimize.UglifyJsPlugin(
-      // {
-      //   // compress: {
-      //   //   unused: false
-      //   // },
-      //   sourceMap: true
-      // }
-    )
+    // new webpack.optimize.UglifyJsPlugin(
+    //   // {
+    //   //   // compress: {
+    //   //   //   unused: false
+    //   //   // },
+    //   //   sourceMap: true
+    //   // }
+    // )
 
   ],
   module: {

@@ -39,18 +39,15 @@ export default {
       names: ['main']
     }),
 
-    // Eliminate duplicate packages when generating bundle
-    // ya no es necesario https://webpack.js.org/guides/migrating/#dedupeplugin-has-been-removed
-    // new webpack.optimize.DedupePlugin(),
     // Minify JS
 
     // new webpack.optimize.UglifyJsPlugin(
-    //   // {
-    //   //   // compress: {
-    //   //   //   unused: false
-    //   //   // },
-    //   //   sourceMap: true
-    //   // }
+    //   {
+    //     compress: {
+    //       unused: false
+    //     },
+    //     sourceMap: true
+    //   }
     // )
 
   ],

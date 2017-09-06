@@ -45,12 +45,13 @@ export default {
     // Minify JS
 
     new webpack.optimize.UglifyJsPlugin(
-      {
-        // compress: {
-        //   unused: false
-        // },
-        sourceMap: true
-      })
+      // {
+      //   // compress: {
+      //   //   unused: false
+      //   // },
+      //   sourceMap: true
+      // }
+    )
 
   ],
   module: {

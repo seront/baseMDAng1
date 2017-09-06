@@ -5,7 +5,7 @@ function cleanRut(_value) {
   }else if(typeof( _value) === 'number'){
     out = _value+'';
   }
-  return out
+  return out;
 }
 
 
@@ -76,6 +76,7 @@ export default angular.module('platanus.rut', [])
       restrict: 'A',
       require: 'ngModel',
       link: function($scope, $element, $attrs, ngModel) {
+        'ngInject';
         if ( typeof $attrs.rutFormat === 'undefined' ) {
           $attrs.rutFormat = 'live';
         }

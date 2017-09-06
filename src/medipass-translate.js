@@ -1,5 +1,6 @@
 
   export function translateConfig($translateProvider){
+    'ngInject';
     var translations = {
 
     }

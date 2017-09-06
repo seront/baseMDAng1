@@ -23,13 +23,14 @@ import { translateConfig } from './medipass-translate';
 
 // export var MedipassBase = angular.module('medipass.base', [
 export default angular.module('medipass.base', [
-  ngMaterial,
-  translate,
-  ComponentsModule,
-  CustomTableModule,
-  FinanciadorModule,
-  PrestadorModule,
-  CommonsModule])
+  'ngMaterial',
+  'translate',
+  'ComponentsModule',
+  'CustomTableModule',
+  'FinanciadorModule',
+  'PrestadorModule',
+  'CommonsModule'
+])
   .config(translateConfig)
   .config(themeConfig)
   .name;

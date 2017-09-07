@@ -35,9 +35,10 @@ class SideMenuController{
 
     toggleSideMenu(){
       if(this.config.componentId){
-        this.$mdSidenav(this.config.componentId).toggle().then(response=>{
-          this.$log.log('toggled');
-        });
+        // this.$mdSidenav(this.config.componentId).toggle().then(response=>{
+        //   this.$log.log('toggled');
+        // });
+        this.$mdSidenav(this.config.componentId).toggle();
       }else{
         this.$log.error("the sidemenu requires an 'componentId'");
       }

@@ -11,7 +11,6 @@ class UserAdminController {
     ];
 
     this.config = {
-      rowSelect: true, // seleccionar filas?
       multiple: false, // seleccionar mas de una fila a la vez?
       progress: "", //promesa para mostrar barra de carga o cambio en
       autoSelect: true, //true
@@ -27,7 +26,8 @@ class UserAdminController {
       },
       key3: { type: "switch" },
       key4: { type: "switch", trueValue: 1, falseValue: 0 },
-      key5: { type: "inputNumber", action: 'input-change', text: "NUMERO" },
+      key5: { type: "array-object", value: "correo", limit: 2 },
+
       // key6: { type: "text", avoid: '{"@nil":true}'},
       key6: { type: "copy", options:{child: "key2"}},
       key7: { type: "icon-set", options: [
@@ -92,6 +92,10 @@ class UserAdminController {
       key1: "value1 VALUE Value",
       key2: 111222333,
       key3: "value3",
+      // correos:{correo: "correo@dominio.com"},
+      // correos:[{correo: "correo@dominio.com"}, {correo: "correo@dominio.com"}],
+
+      key5:[{correo: "correo@dominio.com"}, {correo: "correo@dominio.com"}],
       key4: "0",
       key7: 2
     };

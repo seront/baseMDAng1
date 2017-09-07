@@ -3,6 +3,7 @@ import './medipass.css';
 // aun no logro hacer que esto funcione, estudiando posibilidades
 import angular from 'angular';
 import ngMaterial from 'angular-material';
+import ngSanitize from 'angular-sanitize';
 import translate from 'angular-translate';
 
 //Asi funciona para exportar multiples modulos por separado
@@ -24,6 +25,7 @@ import { translateConfig } from './medipass-translate';
 // export var MedipassBase = angular.module('medipass.base', [
 export default angular.module('medipass.base', [
   ngMaterial,
+  ngSanitize,
   translate,
   ComponentsModule,
   CustomTableModule,

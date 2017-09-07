@@ -7,4 +7,6 @@
     $translateProvider
     .translations('es-cl', translations)
     .preferredLanguage('es-cl');
+
+    $translateProvider.useSanitizeValueStrategy('sanitize');
   }

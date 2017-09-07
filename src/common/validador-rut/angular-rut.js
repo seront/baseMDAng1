@@ -6,7 +6,8 @@
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
 
-(function(angular, undefined) {
+// (function(angular, undefined) {
+(function(angular) {
   'use strict';
   function cleanRut(_value) {
     let out = "";

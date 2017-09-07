@@ -17,6 +17,7 @@ export default {
     "angular-ui-router": "angular-ui-router",
     "angular-translate": "angular-translate",
     "angular-material": "angular-material",
+    "angular-sanitize": "angular-sanitize",
     "angular-material-data-table": "angular-material-data-table"
   },
   // target: 'web',

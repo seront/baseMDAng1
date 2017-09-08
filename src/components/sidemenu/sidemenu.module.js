@@ -1,5 +1,5 @@
 import angular from 'angular';
-import material from 'angular-material'
+import material from 'angular-material';
 
 import {SidemenuComponent} from './sidemenu.component';
 

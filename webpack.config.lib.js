@@ -4,7 +4,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default {
   devtool: 'source-map',
-  resolve: { symlinks: false },
+  // resolve: { symlinks: false },
   entry: {
     // Ruta del archivo index.js principal del modulo
     // main: path.resolve(__dirname, 'src/access'),
@@ -25,10 +25,11 @@ export default {
   output: {
     path: path.resolve(__dirname, 'lib'),
     // nombre de la libreria
-    library: 'medipass-base',
+    filename: 'medipass-base.js',
     // para que webpack exporte el
+    library: 'medipass-base',
     libraryTarget: 'umd',
-    filename: 'medipass-base.js'
+    umdNamedDefine: true
   },
   plugins: [
     //Para manejar el css
@@ -40,19 +41,9 @@ export default {
       names: ['main']
     }),
 
-    // Eliminate duplicate packages when generating bundle
-    // ya no es necesario https://webpack.js.org/guides/migrating/#dedupeplugin-has-been-removed
-    // new webpack.optimize.DedupePlugin(),
     // Minify JS
 
-    // new webpack.optimize.UglifyJsPlugin(
-    //   // {
-    //   //   // compress: {
-    //   //   //   unused: false
-    //   //   // },
-    //   //   sourceMap: true
-    //   // }
-    // )
+    new webpack.optimize.UglifyJsPlugin({ sourceMap: true})
 
   ],
   module: {
@@ -60,7 +51,12 @@ export default {
     rules: [
       //Usamos babel para interpretar los JS en ES6 y dejarlos entendibles para el navegador
       {
-        use: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+          // options:{
+          //   minify: true
+          // }
+        },
         test: /\.js$/,
         exclude: /nodes_modules/
       },

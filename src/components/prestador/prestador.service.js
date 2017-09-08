@@ -1,6 +1,5 @@
-export default class PrestadorService {
+ class PrestadorService {
   constructor(Url, $http) {
-    'ngInject';
     this.$http = $http;
     this.url = Url.urlBase + "/prestador";
   }
@@ -9,3 +8,6 @@ export default class PrestadorService {
     return this.$http.get(this.url)
   }
 }
+// PrestadorService.$inject = [];
+// export default PrestadorService;
+export default ['Url', '$http', PrestadorService];

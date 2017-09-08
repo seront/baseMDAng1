@@ -1,7 +1,6 @@
 import angular from 'angular';
 class UrlService {
   constructor() {
-    // 'ngInject';
     this.login = "http://api.medipass.cl/usuarios/login";
   }
 }

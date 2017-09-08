@@ -1,9 +1,7 @@
 class TableController {
   constructor($filter) {
-    'ngInject';
     this.$filter = $filter;
     this.arrayKey = [];
-
   }
   $onInit() {
     this.newConfig = [];
@@ -116,7 +114,8 @@ class TableController {
 
 export const TableComponent = {
   template: require('./table.html'),
-  controller: TableController,
+  // controller: TableController,
+  controller: ['$filter', TableController],
   bindings: {
     'config': '<',
     'headers': '<',

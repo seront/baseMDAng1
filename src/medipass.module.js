@@ -4,7 +4,6 @@ import angular from 'angular';
 import ngMaterial from 'angular-material';
 import ngSanitize from 'angular-sanitize';
 import translate from 'angular-translate';
-import ngSanitize from 'angular-sanitize';
 
 //Asi funciona para exportar multiples modulos por separado
 

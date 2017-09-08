@@ -43,16 +43,7 @@ export default {
 
     // Minify JS
 
-    new webpack.optimize.UglifyJsPlugin(
-    //   {compress: false,
-    //   mangle: false,
-    //   output: {
-    //     comments: false,
-    //     beautify: true
-    //   }
-    // }
-    { sourceMap: true}
-    )
+    new webpack.optimize.UglifyJsPlugin({ sourceMap: true})
 
   ],
   module: {

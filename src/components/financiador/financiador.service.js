@@ -1,6 +1,5 @@
-export default class FinanciadorService {
+ class FinanciadorService {
   constructor(Url, $http) {
-    'ngInject';
     this.$http = $http;
     this.url = Url.urlBase + "/financiador";
   }
@@ -9,3 +8,6 @@ export default class FinanciadorService {
     return this.$http.get(this.url)
   }
 }
+// FinanciadorService.$inject = ["Url", "$http"];
+// export default FinanciadorService;
+export default ["Url", "$http", FinanciadorService];

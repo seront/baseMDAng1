@@ -3,6 +3,6 @@
     "latest"
   ],
   "plugins": [
-    "ng-inject"
+    "syntax-decorators", "ng-annotate"
   ]
 }

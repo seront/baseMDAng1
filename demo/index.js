@@ -4,7 +4,6 @@ import '../node_modules/angular-material/angular-material.css'
 import '../node_modules/angular-material-data-table/dist/md-data-table.css'
 import angular from 'angular';
 import ngMaterial from 'angular-material';
-import axios from 'axios';
 import uirouter from 'angular-ui-router';
 
 import { default as MedipassBase } from '../src/medipass.module.js';
@@ -24,5 +23,5 @@ let app = angular.module('app', [
 
 app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/dashboard");
-  axios.defaults.baseURL = 'http://localhost:3001';
+  // axios.defaults.baseURL = 'http://localhost:3001';
 }]);

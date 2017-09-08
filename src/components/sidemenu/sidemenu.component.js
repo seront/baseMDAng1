@@ -1,6 +1,5 @@
 class SideMenuController {
   constructor($state, $mdSidenav, $log) {
-    'ngInject';
     this.go = $state.go;
     this.$mdSidenav = $mdSidenav;
     this.$log = $log;
@@ -61,7 +60,8 @@ class SideMenuController {
 
 export const SidemenuComponent = {
   template: require('./sideMenu.html'),
-  controller: SideMenuController,
+  // controller: SideMenuController,
+  controller: ['$state', '$mdSidenav', '$log', SideMenuController],
   bindings: {
     menu: '<',
     config: '<',

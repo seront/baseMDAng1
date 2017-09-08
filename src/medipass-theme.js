@@ -1,7 +1,6 @@
 
-themeConfig.$inject = ['$mdThemingProvider'];
-export default  function themeConfig($mdThemingProvider) {
-  'ngInject';
+// themeConfig.$inject = ['$mdThemingProvider'];
+  function themeConfig($mdThemingProvider) {
   $mdThemingProvider.theme('default')
           .primaryPalette('orange')
           .accentPalette('blue-grey')
@@ -88,3 +87,5 @@ export default  function themeConfig($mdThemingProvider) {
           .accentPalette('blue-grey')
           .warnPalette('red');
 }
+
+export default ["$mdThemingProvider", themeConfig];

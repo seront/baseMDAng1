@@ -1,6 +1,5 @@
 
-  export function translateConfig($translateProvider){
-    'ngInject';
+   function translateConfig($translateProvider){
     var translations = {
 
     }
@@ -10,3 +9,4 @@
 
     $translateProvider.useSanitizeValueStrategy('sanitize');
   }
+  export default ['$translateProvider', translateConfig];

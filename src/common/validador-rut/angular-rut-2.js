@@ -80,28 +80,30 @@ function formatRutOnBlur($element, ngModel) {
   });
 }
 
+logica.$inject = ['$scope', '$element', '$attrs', 'ngModel'];
+function logica ($scope, $element, $attrs, ngModel) {
+  if (typeof $attrs.rutFormat === 'undefined') {
+    $attrs.rutFormat = 'live';
+  }
+
+  addValidatorToNgModel(ngModel);
+
+  switch ($attrs.rutFormat) {
+    case 'live':
+      formatRutOnWatch($scope, ngModel);
+      break;
+    case 'blur':
+      formatRutOnBlur($element, ngModel);
+      break;
+  }
+}
+
 export default angular.module('platanus.rut', [])
   .directive('ngRut', function () {
     return {
       restrict: 'A',
       require: 'ngModel',
-      link: function ($scope, $element, $attrs, ngModel) {
-        'ngInject';
-        if (typeof $attrs.rutFormat === 'undefined') {
-          $attrs.rutFormat = 'live';
-        }
-
-        addValidatorToNgModel(ngModel);
-
-        switch ($attrs.rutFormat) {
-          case 'live':
-            formatRutOnWatch($scope, ngModel);
-            break;
-          case 'blur':
-            formatRutOnBlur($element, ngModel);
-            break;
-        }
-      }
+      link: logica
     };
   })
   .filter('rut', function () {

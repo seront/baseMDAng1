@@ -14,7 +14,7 @@ class UserAdminController {
       multiple: false, // seleccionar mas de una fila a la vez?
       progress: "", //promesa para mostrar barra de carga o cambio en
       autoSelect: true, //true
-      rowSelect: false,
+      rowSelect: true,
       selectId: "", // propiedad del objeto que lo identifica como unico
       rowSelectDisable: "" //propiedad del objeto en la fila que dice si la fila se puede seleccionar o no
     };

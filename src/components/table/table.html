@@ -108,7 +108,6 @@
           <md-switch ng-if="conf[1].type === 'switch' && typeof(conf[1].trueValue) == 'undefined' && typeof(conf[1].falseValue) == 'undefined'"
             ng-model="object[conf[0]]" ng-change="$ctrl.onAction({name: conf[1].action, object: object})" aria-label="Switch 1"
             ng-disabled="conf[1].disabled">
-
           </md-switch>
           <md-switch ng-if="conf[1].type === 'switch' && typeof(conf[1].trueValue) != 'undefined' && typeof(conf[1].falseValue) != 'undefined'"
             ng-model="object[conf[0]]" ng-true-value="{{conf[1].trueValue}}" ng-false-value="{{conf[1].falseValue}}" ng-change="$ctrl.onAction({name: conf[1].action, object: object})"

@@ -52,9 +52,6 @@ export default {
       {
         use: {
           loader: 'babel-loader',
-          // options:{
-          //   minify: true
-          // }
         },
         test: /\.js$/,
         exclude: /nodes_modules/

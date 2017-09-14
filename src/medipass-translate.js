@@ -8,5 +8,6 @@
     .preferredLanguage('es-cl');
 
     $translateProvider.useSanitizeValueStrategy('sanitize');
+
   }
   export default ['$translateProvider', translateConfig];

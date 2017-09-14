@@ -14,7 +14,6 @@ export default {
   //que no se incluyen en el
   externals: {
     "angular": "angular",
-    "angular-ui-router": "angular-ui-router",
     "angular-translate": "angular-translate",
     "angular-material": "angular-material",
     "angular-sanitize": "angular-sanitize",

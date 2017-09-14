@@ -18,7 +18,15 @@ function themeConfig($mdThemingProvider) {
     'A100': '#9dd6e2',
     'A200': '#b0dee8',
     'A400': '#c4e6ee',
-    'A700': '#17454f'
+    'A700': '#17454f',
+    contrastDefaultColor: 'light',
+    contrastLightColors: [
+      '50',
+      '100',
+      'A100',
+      'A200',
+      '500'
+    ]
   };
   $mdThemingProvider
     .definePalette('customPrimary',

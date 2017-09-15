@@ -4,6 +4,7 @@ import angular from 'angular';
 import ngMaterial from 'angular-material';
 import ngSanitize from 'angular-sanitize';
 import translate from 'angular-translate';
+import moment from 'moment';
 
 //Asi funciona para exportar multiples modulos por separado
 
@@ -33,4 +34,25 @@ export default angular.module('medipass.base', [
   CommonsModule])
   .config(translateConfig)
   .config(themeConfig)
+  .config(["$mdDateLocaleProvider", function($mdDateLocaleProvider) {
+    $mdDateLocaleProvider.formatDate = function(date) {
+        if(date) {
+            return moment(date).format('DD-MM-YYYY');
+        } else {
+          return "";
+        }
+    };
+    $mdDateLocaleProvider.parseDate = function(dateString) {
+      var m = moment(dateString, 'DD-MM-YYYY', true);
+      return m.isValid() ? m.toDate() : new Date(NaN);
+  };
+
+    $mdDateLocaleProvider.months = ['Enero', 'Febrero', 'Marzo', 'Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+    $mdDateLocaleProvider.shortMonths = ['Ene', 'Feb', 'Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+    $mdDateLocaleProvider.days = ['domingo', 'lunes', 'martes','miércoles','jueves', 'viernes', 'sábado', 'domingo'];
+    $mdDateLocaleProvider.shortDays = ['Do', 'Lu', 'Ma', 'Mi','Ju','Vi','Sa'];
+
+
+
+  }])
   .name;

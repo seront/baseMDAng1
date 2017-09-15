@@ -1,9 +1,4 @@
-// themeConfig.$inject = ['$mdThemingProvider'];
 function themeConfig($mdThemingProvider) {
-  // $mdThemingProvider.theme('default')
-  //         .primaryPalette('orange')
-  //         .accentPalette('blue-grey')
-  //         .warnPalette('red');
   var customPrimary = {
     '50': '#89cddd',
     '100': '#75c5d7',
@@ -53,53 +48,20 @@ function themeConfig($mdThemingProvider) {
       customAccent);
 
   $mdThemingProvider.theme('default')
-    .primaryPalette('customPrimary')
-    .accentPalette('customAccent')
+    .primaryPalette('customPrimary', {
+      'default': '200',
+      'hue-1': '800',
+      'hue-2': '900',
+      'hue-3': 'A700'
+    })
+    .accentPalette('customAccent', {
+      'default': '200',
+      'hue-1': '800',
+      'hue-2': '900',
+      'hue-3': 'A700'
+    })
     .warnPalette('red')
     .backgroundPalette('grey');
-
-
-  $mdThemingProvider.definePalette('mcgpalette0', {
-    50: 'eff0f3',
-    100: 'd8dae1',
-    200: 'bec1cd',
-    300: 'a4a8b8',
-    400: '9195a9',
-    500: '7d829a',
-    600: '757a92',
-    700: '6a6f88',
-    800: '60657e',
-    900: '4d526c',
-    A100: 'cfd7ff',
-    A200: '9cacff',
-    A400: '6981ff',
-    A700: '506bff',
-    contrastDefaultColor: 'light',
-    contrastDarkColors: [
-      '50',
-      '100',
-      '200',
-      '300',
-      '400',
-      '500',
-      'A100',
-      'A200',
-      'A400'
-    ],
-    contrastLightColors: [
-      '600',
-      '700',
-      '800',
-      '900',
-      'A700'
-    ]
-  });
-
-  $mdThemingProvider.theme('dark')
-    .backgroundPalette('mcgpalette0')
-    .primaryPalette('orange')
-    .accentPalette('blue-grey')
-    .warnPalette('red');
 }
 
 export default ["$mdThemingProvider", themeConfig];

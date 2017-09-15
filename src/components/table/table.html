@@ -69,6 +69,11 @@
                   {{value[conf[1].value]}}
               </span>
           </div>
+          <div ng-if="(conf[1].type === 'array-object-2')" layout="column">
+              <span ng-repeat="value in object[conf[0]] | limitTo: conf[1].limit">
+                  {{value[conf[1].value1][conf[1].value2]}}
+              </span>
+          </div>
 
 
           <span ng-if="(conf[1].type === 'text-filter')" flex="{{conf[1].flex}}" ng-class="conf[1].style">
@@ -116,7 +121,7 @@
           <span flex></span>
         </div>
         </td>
-        <td md-cell ng-if="$ctrl.actions && $ctrl.actions.length > 0" ng-repeat="action in $ctrl.actions" ng-class="action.cellStyle">
+        <td md-cell ng-if="$ctrl.actions && $ctrl.actions.length > 0 && $ctrl.objects.length > 0" ng-repeat="action in $ctrl.actions" ng-class="action.cellStyle">
           <!-- <div ng-if="(action.type === 'switch')" layout="row" ng-hide="object[action.hide.property] === action.hide.value"> -->
           <div ng-if="(action.type === 'switch')" layout="row" ng-hide="(action.hide && (object[action.hide.property] === action.hide.value))">
             <span  flex></span>

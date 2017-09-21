@@ -37,7 +37,14 @@ class UserAdminController {
         icon: "settings"},
         {value: 3,
         icon: "dashboard"}
-      ]}
+      ]},
+      key8:{
+        // type: "nested-2",
+        type: "filter-nested-2",
+        filter: "capitalize",
+        value1: "val1",
+        value2: "val2"
+      }
     };
 
     let action1 = {
@@ -86,7 +93,10 @@ class UserAdminController {
       key2: 111222333,
       key3: "value3",
       key4: 1,
-      key7: 1
+      key7: 1,
+      key8: {val1:{
+        val2: "aqui, correcto"
+      }}
     };
     var object2 = {
       key1: "value1 VALUE Value",
@@ -97,14 +107,20 @@ class UserAdminController {
 
       key5:[{correo: "correo@dominio.com"}, {correo: "correo@dominio.com"}],
       key4: "0",
-      key7: 2
+      key7: 2,
+      key8: {val1:{
+        val2: "aqui, correcto2"
+      }}
     };
     var object3 = {
       key1: "value1",
       key2: 111222333444,
       key3: "value3",
       key4: "0",
-      key7: 3
+      key7: 3,
+      key8: {val1:{
+        val2: "aqui, correcto3"
+      }}
     };
     this.objects = [object1, object2, object3];
 

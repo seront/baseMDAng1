@@ -1,6 +1,6 @@
 {
   "name": "medipass-base",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Componentes minimos para comenzar con una aplicacion AngularJS con angular material",
   "main": "lib/medipass-base.js",
   "scripts": {

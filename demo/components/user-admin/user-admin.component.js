@@ -85,8 +85,6 @@ class UserAdminController {
         ]
       },
       key8: {
-        // type: "nested-2",
-        // type: "filter-nested-2",
         type: "array-filter-nested-2",
         filter: "capitalize",
         value1: "val1",

@@ -2,12 +2,29 @@ class UserAdminController {
   constructor($log) {
     this.action1Value = false;
     this.log = $log.log;
-    this.headers = [
-      { name: "header1", numeric: false, tooltip:{text: "MENSAJE_TOOLTIP"} },
-      { name: "header2", numeric: false },
-      { name: "header3", numeric: false },
-      { name: "header4", numeric: false },
-      { name: "numero", numeric: true }
+    this.headers = [{
+        name: "header1",
+        numeric: false,
+        tooltip: {
+          text: "MENSAJE_TOOLTIP"
+        }
+      },
+      {
+        name: "header2",
+        numeric: false
+      },
+      {
+        name: "header3",
+        numeric: false
+      },
+      {
+        name: "header4",
+        numeric: false
+      },
+      {
+        name: "numero",
+        numeric: true
+      }
     ];
 
     this.config = {
@@ -20,27 +37,57 @@ class UserAdminController {
     };
 
     this.objectConfig = {
-      key1: { type: "text-filter", filter: 'capitalize', option: true },
-      key2: {
-        type: "number", filter: 'miles'
+      key1: {
+        type: "text-filter",
+        filter: 'capitalize',
+        option: true
       },
-      key3: { type: "switch" },
-      key4: { type: "switch", trueValue: 1, falseValue: 0 },
-      key5: { type: "array-object", value: "correo", limit: 2 },
+      key2: {
+        type: "number",
+        filter: 'miles'
+      },
+      key3: {
+        type: "switch"
+      },
+      key4: {
+        type: "switch",
+        trueValue: 1,
+        falseValue: 0
+      },
+      key5: {
+        type: "array-object",
+        value: "correo",
+        limit: 2
+      },
 
       // key6: { type: "text", avoid: '{"@nil":true}'},
-      key6: { type: "copy", options:{child: "key2"}},
-      key7: { type: "icon-set", options: [
-        {value: 1,
-        icon: "person", style: []},
-        {value: 2,
-        icon: "settings"},
-        {value: 3,
-        icon: "dashboard"}
-      ]},
-      key8:{
+      key6: {
+        type: "copy",
+        options: {
+          child: "key2"
+        }
+      },
+      key7: {
+        type: "icon-set",
+        options: [{
+            value: 1,
+            icon: "person",
+            style: []
+          },
+          {
+            value: 2,
+            icon: "settings"
+          },
+          {
+            value: 3,
+            icon: "dashboard"
+          }
+        ]
+      },
+      key8: {
         // type: "nested-2",
-        type: "filter-nested-2",
+        // type: "filter-nested-2",
+        type: "array-filter-nested-2",
         filter: "capitalize",
         value1: "val1",
         value2: "val2"
@@ -69,7 +116,7 @@ class UserAdminController {
     let action2 = {
       style: [],
       text: "action2",
-      name: "action2",//Nombre dentro del formulario
+      name: "action2", //Nombre dentro del formulario
       model: '', //Nombre de la propiedad del objeto asociada a este switch
       tooltip: {
         style: [],
@@ -85,18 +132,23 @@ class UserAdminController {
         value: 111222333
       }
     };
-    this.actions = [action1, action2];
+    // this.actions = [action1, action2];
 
-    // this.objects = [];
     var object1 = {
       key1: "value1",
       key2: 111222333,
       key3: "value3",
       key4: 1,
       key7: 1,
-      key8: {val1:{
-        val2: "aqui, correcto"
-      }}
+      key8: [{
+        val1: {
+          val2: "aqui, correcto"
+        }
+      }, {
+        val1: {
+          val2: "aqui, correcto1.1"
+        }
+      }]
     };
     var object2 = {
       key1: "value1 VALUE Value",
@@ -105,12 +157,22 @@ class UserAdminController {
       // correos:{correo: "correo@dominio.com"},
       // correos:[{correo: "correo@dominio.com"}, {correo: "correo@dominio.com"}],
 
-      key5:[{correo: "correo@dominio.com"}, {correo: "correo@dominio.com"}],
+      key5: [{
+        correo: "correo@dominio.com"
+      }, {
+        correo: "correo@dominio.com"
+      }],
       key4: "0",
       key7: 2,
-      key8: {val1:{
-        val2: "aqui, correcto2"
-      }}
+      key8: [{
+        val1: {
+          val2: "aqui, correcto2"
+        }
+      }, {
+        val1: {
+          val2: "aqui, correcto2.1"
+        }
+      }]
     };
     var object3 = {
       key1: "value1",
@@ -118,9 +180,15 @@ class UserAdminController {
       key3: "value3",
       key4: "0",
       key7: 3,
-      key8: {val1:{
-        val2: "aqui, correcto3"
-      }}
+      key8: [{
+        val1: {
+          val2: "aqui, correcto3"
+        }
+      }, {
+        val1: {
+          val2: "aqui, correcto3.1"
+        }
+      }]
     };
     this.objects = [object1, object2, object3];
 
@@ -134,7 +202,16 @@ class UserAdminController {
       boundaryLinks: true, //boolean, default: false
       label: "{of: 'DE', page: 'PAGINA', rowsPerPage: 'FILAS_PAGINAS'}", //formato del string q se le pasa a la tabla
       limitOptions: [5, 10, 15],
-      footLabel: [{title:{text: "Probando:", style: []}, text: {text: "El label", style: []}}]
+      footLabel: [{
+        title: {
+          text: "Probando:",
+          style: []
+        },
+        text: {
+          text: "El label",
+          style: []
+        }
+      }]
     };
   }
 
@@ -161,11 +238,11 @@ class UserAdminController {
     this.log(value);
   }
 
-  onSelect(object){
+  onSelect(object) {
     console.log("onSelect user admin");
     console.log(object);
   }
-  onDeselect(object){
+  onDeselect(object) {
     console.log("onDeselect user admin");
     console.log(object);
   }
@@ -176,11 +253,11 @@ class UserAdminController {
 
   }
 
-  quitarAcciones(){
+  quitarAcciones() {
     this.actions = [];
   }
 
-  masObjetos(){
+  masObjetos() {
     let ar = this.objects;
     this.objects = [];
     var object2 = {
@@ -189,7 +266,9 @@ class UserAdminController {
       key3: true,
       key4: 1,
       key5: 5,
-      key6: { "@nil": true}
+      key6: {
+        "@nil": true
+      }
     };
 
     ar.push(object2);
@@ -197,7 +276,7 @@ class UserAdminController {
     this.objects = ar;
   }
 
-  onPaginate(page, limit){
+  onPaginate(page, limit) {
     console.log("page " + page + " limit: " + limit);
   }
 

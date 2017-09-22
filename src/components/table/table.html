@@ -55,6 +55,7 @@
             </md-icon>
             </div>
           </div>
+
           <div ng-if="(conf[1].type === 'array-text')">
               <span ng-repeat="value in object[conf[0]]">
                 <span>
@@ -69,24 +70,29 @@
                   {{value[conf[1].value]}}
               </span>
           </div>
+
           <div ng-if="(conf[1].type === 'array-object-2')" layout="column">
               <span ng-repeat="value in object[conf[0]] | limitTo: conf[1].limit">
                   {{value[conf[1].value1][conf[1].value2]}}
               </span>
           </div>
+
           <div ng-if="(conf[1].type === 'array-filter-nested-2')" layout="column">
               <span ng-repeat="value in object[conf[0]] | limitTo: conf[1].limit">
                   {{$ctrl.applyFilter(value[conf[1].value1][conf[1].value2], conf[1].filter, conf[1].option)}}
               </span>
           </div>
+
           <div ng-if="(conf[1].type === 'array-nested-2')" layout="column">
               <span ng-repeat="value in object[conf[0]] | limitTo: conf[1].limit">
                   {{value[conf[1].value1][conf[1].value2]}}
               </span>
           </div>
+
           <div ng-if="(conf[1].type === 'filter-nested-2')">
             {{$ctrl.applyFilter(object[conf[0]][conf[1].value1][conf[1].value2], conf[1].filter, conf[1].option)}}
           </div>
+
           <div ng-if="(conf[1].type === 'nested-2')">
             {{object[conf[0]][conf[1].value1][conf[1].value2]}}
           </div>

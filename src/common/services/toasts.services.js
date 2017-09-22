@@ -50,6 +50,7 @@ export default class ToastsService{
         );
       }
 
+      // incluyendo un cambio loco a ver si cambia la vaina xq q ladilla
       showResponseError(status) {
         let text = "";
         switch (status) {

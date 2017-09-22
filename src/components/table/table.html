@@ -55,6 +55,7 @@
             </md-icon>
             </div>
           </div>
+
           <div ng-if="(conf[1].type === 'array-text')">
               <span ng-repeat="value in object[conf[0]]">
                 <span>
@@ -64,12 +65,36 @@
               </span>
           </div>
 
-          <div ng-if="(conf[1].type === 'array-object')">
-              <span ng-repeat="value in object[conf[0]]">
-                <span>
+          <div ng-if="(conf[1].type === 'array-object')" layout="column">
+              <span ng-repeat="value in object[conf[0]] | limitTo: conf[1].limit">
                   {{value[conf[1].value]}}
-                </span>
               </span>
+          </div>
+
+          <div ng-if="(conf[1].type === 'array-object-2')" layout="column">
+              <span ng-repeat="value in object[conf[0]] | limitTo: conf[1].limit">
+                  {{value[conf[1].value1][conf[1].value2]}}
+              </span>
+          </div>
+
+          <div ng-if="(conf[1].type === 'array-filter-nested-2')" layout="column">
+              <span ng-repeat="value in object[conf[0]] | limitTo: conf[1].limit">
+                  {{$ctrl.applyFilter(value[conf[1].value1][conf[1].value2], conf[1].filter, conf[1].option)}}
+              </span>
+          </div>
+
+          <div ng-if="(conf[1].type === 'array-nested-2')" layout="column">
+              <span ng-repeat="value in object[conf[0]] | limitTo: conf[1].limit">
+                  {{value[conf[1].value1][conf[1].value2]}}
+              </span>
+          </div>
+
+          <div ng-if="(conf[1].type === 'filter-nested-2')">
+            {{$ctrl.applyFilter(object[conf[0]][conf[1].value1][conf[1].value2], conf[1].filter, conf[1].option)}}
+          </div>
+
+          <div ng-if="(conf[1].type === 'nested-2')">
+            {{object[conf[0]][conf[1].value1][conf[1].value2]}}
           </div>
 
 
@@ -110,17 +135,15 @@
           <md-switch ng-if="conf[1].type === 'switch' && typeof(conf[1].trueValue) == 'undefined' && typeof(conf[1].falseValue) == 'undefined'"
             ng-model="object[conf[0]]" ng-change="$ctrl.onAction({name: conf[1].action, object: object})" aria-label="Switch 1"
             ng-disabled="conf[1].disabled">
-
           </md-switch>
           <md-switch ng-if="conf[1].type === 'switch' && typeof(conf[1].trueValue) != 'undefined' && typeof(conf[1].falseValue) != 'undefined'"
             ng-model="object[conf[0]]" ng-true-value="{{conf[1].trueValue}}" ng-false-value="{{conf[1].falseValue}}" ng-change="$ctrl.onAction({name: conf[1].action, object: object})"
             aria-label="Switch 1" ng-disabled="conf[1].disabled">
-
           </md-switch>
           <span flex></span>
         </div>
         </td>
-        <td md-cell ng-if="$ctrl.actions && $ctrl.actions.length > 0" ng-repeat="action in $ctrl.actions" ng-class="action.cellStyle">
+        <td md-cell ng-if="$ctrl.actions && $ctrl.actions.length > 0 && $ctrl.objects.length > 0" ng-repeat="action in $ctrl.actions" ng-class="action.cellStyle">
           <!-- <div ng-if="(action.type === 'switch')" layout="row" ng-hide="object[action.hide.property] === action.hide.value"> -->
           <div ng-if="(action.type === 'switch')" layout="row" ng-hide="(action.hide && (object[action.hide.property] === action.hide.value))">
             <span  flex></span>

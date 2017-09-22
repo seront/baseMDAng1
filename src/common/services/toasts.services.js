@@ -50,4 +50,27 @@ export default class ToastsService{
         );
       }
 
+      // incluyendo un cambio loco a ver si cambia la vaina xq q ladilla
+      showResponseError(status) {
+        let text = "";
+        switch (status) {
+          case -1:
+            text = "No se ha podido establecer conexión";
+            break;
+          case 404:
+            text = "No se encuentra el recurso solicitado";
+            break;
+          case 405:
+            text = "No esta autorizado para ver este contenido";
+            break;
+          case 500:
+            text = "Ha ocurrido un error, intente mas tarde";
+            break;
+          default:
+            text = "Ha ocurrido un error";
+            break;
+        }
+        this.showError(text);
+      }
+
     }

@@ -14,7 +14,7 @@ export default {
   //que no se incluyen en el
   externals: {
     "angular": "angular",
-    "angular-ui-router": "angular-ui-router",
+    "moment": "moment",
     "angular-translate": "angular-translate",
     "angular-material": "angular-material",
     "angular-sanitize": "angular-sanitize",
@@ -53,9 +53,6 @@ export default {
       {
         use: {
           loader: 'babel-loader',
-          // options:{
-          //   minify: true
-          // }
         },
         test: /\.js$/,
         exclude: /nodes_modules/
@@ -69,4 +66,4 @@ export default {
       { test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader?sourceMap') }
     ]
   }
-}
+};

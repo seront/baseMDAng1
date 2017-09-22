@@ -4,7 +4,7 @@ import '../node_modules/angular-material/angular-material.css'
 import '../node_modules/angular-material-data-table/dist/md-data-table.css'
 import angular from 'angular';
 import ngMaterial from 'angular-material';
-import uirouter from 'angular-ui-router';
+import uirouter from '@uirouter/angularjs';
 
 import { default as MedipassBase } from '../src/medipass.module.js';
 import { Main } from './components/main/main.component';

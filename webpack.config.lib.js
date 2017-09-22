@@ -43,7 +43,7 @@ export default {
 
     // Minify JS
 
-    new webpack.optimize.UglifyJsPlugin({ sourceMap: true})
+    // new webpack.optimize.UglifyJsPlugin({ sourceMap: true})
 
   ],
   module: {
@@ -66,4 +66,4 @@ export default {
       { test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader?sourceMap') }
     ]
   }
-}
+};
